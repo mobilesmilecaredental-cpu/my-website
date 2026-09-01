@@ -5,12 +5,17 @@ installs, no server code. Upload the folder as-is.
 
 ## What's here
 
-    index.html          Home page  (must keep this exact name)
-    care-homes.html     Long-term care & retirement homes
-    insurance.html      Insurance & direct billing
-    patient-forms.html  Patient intake forms
+    index.html               Home page  (must keep this exact name)
+    children.html            Children
+    busy-professionals.html  Busy professionals
+    seniors-mobility.html    Seniors & mobility
+    care-homes.html          Long-term care & retirement homes
+    insurance.html           Insurance & direct billing
+    patient-forms.html       Patient intake forms
     support.js          Required — do not delete or rename
     assets/             Logo, QR code, images
+    robots.txt          Tells search engines to index the site
+    sitemap.xml         Lists all four pages for search engines
 
 Yes — index.html is required. Both GitHub Pages and Netlify serve
 index.html automatically when someone visits your domain. The other
@@ -46,13 +51,28 @@ submissions land in your inbox automatically:
 
        window.SMILE_CARE_FORM_KEY = "a1b2c3d4-e5f6-...";
 
-Do this in all four files. Free tier covers 250 submissions/month.
+Do this in every .html file. Free tier covers 250 submissions/month.
 
 ## Making changes later
 
 Text and colours are plain HTML inside each file, editable in any
 text editor. To swap an image, replace the file in assets/ keeping
 the same filename, then re-upload.
+
+## Domain
+
+The live domain is https://www.mobilesmilecare.ca/ — it appears in the
+canonical tags, sitemap.xml, and robots.txt. If the domain ever
+changes, ask me to swap it and I'll regenerate the files.
+
+Submit sitemap.xml to Google Search Console
+(search.google.com/search-console) so the site gets indexed faster.
+Do not delete the CNAME file GitHub added to the repo — it is what
+keeps the custom domain working.
+
+Most important step for local search: create a free Google Business
+Profile for Smile Care with the service area set to Windsor / Essex
+County. Without it the practice won't appear in map results.
 
 ## Notes
 
