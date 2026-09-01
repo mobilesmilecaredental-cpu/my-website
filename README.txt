@@ -1,7 +1,7 @@
 # Smile Care — website files
 
-Everything in this folder is the complete website. No build step, no
-installs, no server code. Upload the folder as-is.
+Everything in this folder is the complete website: plain HTML, no build
+step, no installs, no server code. Upload the folder contents as-is.
 
 ## What's here
 
@@ -12,30 +12,25 @@ installs, no server code. Upload the folder as-is.
     care-homes.html          Long-term care & retirement homes
     insurance.html           Insurance & direct billing
     patient-forms.html       Patient intake forms
-    support.js          Required — do not delete or rename
-    assets/             Logo, QR code, images
-    robots.txt          Tells search engines to index the site
-    sitemap.xml         Lists all four pages for search engines
+    site.js                  Menus, FAQ, forms, animations — keep it
+    assets/                  Logo, QR code, images
+    robots.txt               Tells search engines to index the site
+    sitemap.xml              Lists all seven pages for search engines
 
-Yes — index.html is required. Both GitHub Pages and Netlify serve
-index.html automatically when someone visits your domain. The other
-pages are reached by their filename (yoursite.com/insurance.html).
+Every page is finished HTML on its own — the text and layout are in the
+file, so pages appear instantly and search engines read them directly.
+site.js only adds the interactive extras (mobile menu, FAQ accordion,
+form sending, scroll animations). If it were removed, the pages would
+still read correctly; they just wouldn't be interactive.
 
 ## Publishing on GitHub Pages
 
-1. Create a new repository on github.com (public).
-2. Upload the CONTENTS of this folder to the root of the repo —
-   index.html must sit at the top level, not inside a "site" folder.
-3. Repo → Settings → Pages → Source: "Deploy from a branch",
-   Branch: main, Folder: / (root) → Save.
-4. Wait ~1 minute. Your site is at
-   https://<username>.github.io/<repo-name>/
-5. Custom domain: Settings → Pages → Custom domain, then add the
-   DNS records GitHub shows you at your registrar.
+1. Upload the CONTENTS of this folder to the root of your repo —
+   index.html must sit at the top level, not inside a folder.
+2. Settings → Pages → Deploy from a branch → main → / (root) → Save.
+3. Do NOT delete the CNAME file GitHub added; it holds your domain.
 
-(Netlify alternative: drag this folder onto app.netlify.com/drop.)
-
-## Before you publish: turn on the inquiry forms (2 minutes)
+## Turn on the inquiry forms (2 minutes)
 
 Out of the box the forms open the visitor's own email app. To have
 submissions land in your inbox automatically:
@@ -51,28 +46,26 @@ submissions land in your inbox automatically:
 
        window.SMILE_CARE_FORM_KEY = "a1b2c3d4-e5f6-...";
 
-Do this in every .html file. Free tier covers 250 submissions/month.
+Do this in all seven files. Free tier covers 250 submissions/month.
+
+## Domain & search
+
+The live domain is https://www.mobilesmilecare.ca/ — it appears in the
+canonical tags, sitemap.xml, and robots.txt. If it ever changes, ask me
+to swap it and I'll regenerate the files.
+
+Submit sitemap.xml in Google Search Console
+(search.google.com/search-console) so the site gets indexed faster.
+
+Most important step for local search: a free Google Business Profile
+for Smile Care with the service area set to Windsor / Essex County.
+Without it the practice won't appear in map results.
 
 ## Making changes later
 
-Text and colours are plain HTML inside each file, editable in any
-text editor. To swap an image, replace the file in assets/ keeping
-the same filename, then re-upload.
-
-## Domain
-
-The live domain is https://www.mobilesmilecare.ca/ — it appears in the
-canonical tags, sitemap.xml, and robots.txt. If the domain ever
-changes, ask me to swap it and I'll regenerate the files.
-
-Submit sitemap.xml to Google Search Console
-(search.google.com/search-console) so the site gets indexed faster.
-Do not delete the CNAME file GitHub added to the repo — it is what
-keeps the custom domain working.
-
-Most important step for local search: create a free Google Business
-Profile for Smile Care with the service area set to Windsor / Essex
-County. Without it the practice won't appear in map results.
+Text and colours are plain HTML inside each file, editable in any text
+editor. To swap an image, replace the file in assets/ keeping the same
+filename, then re-upload.
 
 ## Notes
 
