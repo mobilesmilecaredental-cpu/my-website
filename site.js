@@ -363,17 +363,29 @@
     if (typeof IntersectionObserver === 'undefined') return;
     var sections = $$('section[id]');
     if (!sections.length) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (!en.isIntersecting) return;
-        var id = en.target.id;
-        $$('.nav-lnk, .nav-mlnk').forEach(function (a) {
-          var href = a.getAttribute('href') || '';
-          a.classList.toggle('on', href === '#' + id);
-        });
+    var links = $$('.nav-lnk, .nav-mlnk');
+    var setOn = function (id) {
+      links.forEach(function (a) { a.classList.toggle('on', (a.getAttribute('href') || '') === '#' + id); });
+    };
+    var lockUntil = 0, ticking = false;
+    var update = function () {
+      ticking = false;
+      if (Date.now() < lockUntil) return;
+      var header = $('header');
+      var line = (header ? header.getBoundingClientRect().bottom : 0) + 140;
+      var current = '';
+      sections.forEach(function (s) { if (s.getBoundingClientRect().top <= line) current = s.id; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = sections[sections.length - 1].id;
+      setOn(current);
+    };
+    links.forEach(function (a) {
+      a.addEventListener('click', function () {
+        var h = a.getAttribute('href') || '';
+        if (h.charAt(0) === '#' && document.getElementById(h.slice(1))) { setOn(h.slice(1)); lockUntil = Date.now() + 1200; }
       });
-    }, { rootMargin: '-45% 0px -45% 0px' });
-    sections.forEach(function (s) { io.observe(s); });
+    });
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
   }
 
   function start() {
