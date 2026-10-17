@@ -241,10 +241,11 @@ def contact(p):
           </li>
         </ul>
       </div>
-      <form class="form-card" data-form novalidate>
+      <form class="form-card" data-form novalidate action="https://api.web3forms.com/submit" method="POST">
         <h3>{form_title}</h3>
         <p class="note">{note}</p>
         <input type="hidden" name="subject" value="New {'care-home inquiry' if care else 'question'} from mobilesmilecare.ca">
+        <input type="hidden" name="access_key" value="{FORM_KEY}">
         <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field-row">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
@@ -356,8 +357,10 @@ def head(p):
     preload = ""
     if p.get("preload_hero"):
         n = p["preload_hero"]
-        preload = (f'<link rel="preload" as="image" type="image/avif" imagesrcset="img/{n}-600.avif 600w, '
-                   f'img/{n}-900.avif 900w, img/{n}-1200.avif 1200w" imagesizes="(max-width: 860px) 92vw, 500px" fetchpriority="high">\n')
+        preload = (f'<link rel="preload" as="image" type="image/avif" media="(min-width: 861px)" imagesrcset="img/{n}-600.avif 600w, '
+                   f'img/{n}-900.avif 900w, img/{n}-1200.avif 1200w" imagesizes="500px" fetchpriority="high">\n'
+                   f'<link rel="preload" as="image" type="image/avif" media="(max-width: 860px)" imagesrcset="img/{n}-m-600.avif 600w, '
+                   f'img/{n}-m-900.avif 900w" imagesizes="92vw" fetchpriority="high">\n')
     return f"""<!doctype html>
 <html lang="en-CA">
 <head>

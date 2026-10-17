@@ -37,9 +37,12 @@
     if (open) { open.removeAttribute('open'); var s = open.querySelector('summary'); if (s) s.focus(); }
   });
   var sheet = document.querySelector('.menu-toggle');
-  if (sheet) sheet.addEventListener('toggle', function () {
-    document.documentElement.style.overflow = sheet.open ? 'hidden' : '';
-  });
+  var desktop = window.matchMedia ? window.matchMedia('(min-width: 1081px)') : null;
+  function closeSheetOnDesktop() { if (sheet && desktop && desktop.matches) sheet.removeAttribute('open'); }
+  if (desktop) {
+    if (desktop.addEventListener) desktop.addEventListener('change', closeSheetOnDesktop);
+    else if (desktop.addListener) desktop.addListener(closeSheetOnDesktop);
+  }
 
   // Question form: Web3Forms when a key is set, otherwise the visitor's mail app.
   Array.prototype.forEach.call(document.querySelectorAll('form[data-form]'), function (form) {
@@ -67,7 +70,7 @@
       }
       var data = {};
       Array.prototype.forEach.call(form.elements, function (el) {
-        if (el.name && el.name !== 'botcheck') data[el.name] = el.value;
+        if (el.name && el.name !== 'botcheck' && el.name !== 'access_key') data[el.name] = el.value;
       });
       var body = 'Name: ' + data.name + '\nPhone: ' + (data.phone || 'not provided') + '\nEmail: ' + data.email +
         '\nVisit for: ' + (data.visit_for || '') + '\n\n' + data.message;

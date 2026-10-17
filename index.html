@@ -22,7 +22,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/spectral-300-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" imagesrcset="img/lisa-hero-600.avif 600w, img/lisa-hero-900.avif 900w, img/lisa-hero-1200.avif 1200w" imagesizes="(max-width: 860px) 92vw, 500px" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(min-width: 861px)" imagesrcset="img/lisa-hero-600.avif 600w, img/lisa-hero-900.avif 900w, img/lisa-hero-1200.avif 1200w" imagesizes="500px" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" media="(max-width: 860px)" imagesrcset="img/lisa-hero-m-600.avif 600w, img/lisa-hero-m-900.avif 900w" imagesizes="92vw" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
@@ -417,7 +418,7 @@
     <div class="wrap hero-grid">
       <div>
         <h1 id="hero-title">Mobile dental hygiene, brought to your door.</h1>
-        <p class="lede">I’m Lisa Suciu, RDH, a mobile dental hygienist. Through Mobile Smile Care, I bring professional teeth cleanings and preventive care to homes, workplaces and care residences across Windsor &amp; Essex County, Ontario.</p>
+        <p class="lede">I’m Lisa Suciu, RDH, a mobile dental hygienist bringing teeth cleanings and preventive care to homes, workplaces and care residences across Windsor &amp; Essex County.</p>
         <div class="hero-actions">
           <a class="btn btn--dark" href="#contact" data-book><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>
           <a class="btn btn--line" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call<span class="num">&nbsp;(905) 941-7580</span></a>
@@ -509,8 +510,8 @@
     <div class="wrap lisa-grid">
       <div class="lisa-photo">
         <picture>
-          <source type="image/avif" srcset="img/lisa-full-560.avif 560w, img/lisa-full-880.avif 880w" sizes="(max-width: 860px) 90vw, 420px">
-          <img src="img/lisa-full-560.webp" srcset="img/lisa-full-560.webp 560w, img/lisa-full-880.webp 880w" sizes="(max-width: 860px) 90vw, 420px" width="560" height="700" alt="Lisa Suciu, Registered Dental Hygienist, standing beside her portable dental unit" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="img/lisa-upper-480.avif 480w, img/lisa-upper-560.avif 560w" sizes="(max-width: 860px) 90vw, 420px">
+          <img src="img/lisa-upper-560.webp" srcset="img/lisa-upper-480.webp 480w, img/lisa-upper-560.webp 560w" sizes="(max-width: 860px) 90vw, 420px" width="560" height="700" alt="Lisa Suciu, Registered Dental Hygienist, standing beside her portable dental unit" loading="lazy" decoding="async">
         </picture>
       </div>
       <div class="lisa-copy">
@@ -589,10 +590,11 @@
           </li>
         </ul>
       </div>
-      <form class="form-card" data-form novalidate>
+      <form class="form-card" data-form novalidate action="https://api.web3forms.com/submit" method="POST">
         <h3>Ask a question</h3>
         <p class="note">For booking questions, coverage or care-home inquiries. Please don’t include medical details here.</p>
         <input type="hidden" name="subject" value="New question from mobilesmilecare.ca">
+        <input type="hidden" name="access_key" value="c8442fae-15a3-4455-824e-184189a23934">
         <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field-row">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>

@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-17T06:38:39+00:00",
+  "title": "Design System: Mobile Smile Care",
+  "extensions": {
+    "colorMeta": {
+      "espresso": {
+        "role": "primary",
+        "displayName": "Espresso Ink",
+        "canonical": "oklch(22.6% 0.016 53.7)",
+        "tonalRamp": [
+          "#0F0A07",
+          "#2A231F",
+          "#48403B",
+          "#685F59",
+          "#8A807A",
+          "#ADA39D",
+          "#D1C7C1",
+          "#F6ECE7"
+        ]
+      },
+      "espresso-2": {
+        "role": "primary",
+        "displayName": "Espresso Hover Layer",
+        "canonical": "oklch(27.0% 0.019 52.6)",
+        "tonalRamp": [
+          "#100A06",
+          "#2B231E",
+          "#49403A",
+          "#6A5F58",
+          "#8C8078",
+          "#AEA29B",
+          "#D2C7C0",
+          "#F7ECE6"
+        ]
+      },
+      "espresso-hover": {
+        "role": "primary",
+        "displayName": "Espresso Lift",
+        "canonical": "oklch(30.9% 0.025 56.3)",
+        "tonalRamp": [
+          "#110905",
+          "#2D231C",
+          "#4B3F37",
+          "#6C5E55",
+          "#8E7F74",
+          "#B1A298",
+          "#D5C6BC",
+          "#F9ECE2"
+        ]
+      },
+      "bronze": {
+        "role": "secondary",
+        "displayName": "Bronze Foil",
+        "canonical": "oklch(58.7% 0.076 68.9)",
+        "tonalRamp": [
+          "#190500",
+          "#381E00",
+          "#593B16",
+          "#7C5A32",
+          "#A07A4F",
+          "#C29D75",
+          "#E6C29C",
+          "#FFE8C4"
+        ]
+      },
+      "bronze-text": {
+        "role": "secondary",
+        "displayName": "Bronze Text",
+        "canonical": "oklch(48.0% 0.069 71.9)",
+        "tonalRamp": [
+          "#180600",
+          "#352001",
+          "#563C1B",
+          "#785B36",
+          "#9C7C53",
+          "#BF9F79",
+          "#E2C49F",
+          "#FFE9C7"
+        ]
+      },
+      "foil": {
+        "role": "secondary",
+        "displayName": "Gold Foil",
+        "canonical": "oklch(75.5% 0.078 75.2)",
+        "tonalRamp": [
+          "#180600",
+          "#362000",
+          "#573C12",
+          "#7A5B2E",
+          "#9E7C4B",
+          "#C09F71",
+          "#E3C499",
+          "#FFE9C1"
+        ]
+      },
+      "foil-hover": {
+        "role": "secondary",
+        "displayName": "Bright Foil",
+        "canonical": "oklch(81.0% 0.076 76.9)",
+        "tonalRamp": [
+          "#180600",
+          "#352000",
+          "#563D13",
+          "#785C2F",
+          "#9C7C4C",
+          "#BEA072",
+          "#E2C49A",
+          "#FFEAC2"
+        ]
+      },
+      "foil-line": {
+        "role": "secondary",
+        "displayName": "Foil Line",
+        "canonical": "rgba(205,169,119,.78)",
+        "tonalRamp": [
+          "#180600",
+          "#362000",
+          "#573C12",
+          "#7A5B2E",
+          "#9E7C4B",
+          "#C09F71",
+          "#E3C499",
+          "#FFE9C1"
+        ]
+      },
+      "halo": {
+        "role": "tertiary",
+        "displayName": "Halo Glow",
+        "canonical": "oklch(89.8% 0.071 80.6)",
+        "tonalRamp": [
+          "#160700",
+          "#332100",
+          "#533E17",
+          "#755D33",
+          "#987E50",
+          "#BBA176",
+          "#DEC69C",
+          "#FFEBC5"
+        ]
+      },
+      "porcelain": {
+        "role": "neutral",
+        "displayName": "Porcelain",
+        "canonical": "oklch(96.1% 0.003 84.6)",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#252524",
+          "#434240",
+          "#62615F",
+          "#838280",
+          "#A6A5A3",
+          "#CAC9C7",
+          "#EFEEED"
+        ]
+      },
+      "card-stock": {
+        "role": "neutral",
+        "displayName": "Card Stock",
+        "canonical": "oklch(98.5% 0.003 84.6)",
+        "tonalRamp": [
+          "#0C0B0A",
+          "#252524",
+          "#424240",
+          "#62615F",
+          "#838280",
+          "#A6A5A3",
+          "#CAC9C7",
+          "#EFEEED"
+        ]
+      },
+      "linen": {
+        "role": "neutral",
+        "displayName": "Linen",
+        "canonical": "oklch(92.1% 0.011 76.6)",
+        "tonalRamp": [
+          "#0D0B08",
+          "#272520",
+          "#45413D",
+          "#65615B",
+          "#86827B",
+          "#A9A49E",
+          "#CDC8C3",
+          "#F2EEE8"
+        ]
+      },
+      "linen-deep": {
+        "role": "neutral",
+        "displayName": "Linen Deep",
+        "canonical": "oklch(87.9% 0.017 76.1)",
+        "tonalRamp": [
+          "#0E0A06",
+          "#29241E",
+          "#474139",
+          "#676057",
+          "#888177",
+          "#ABA49A",
+          "#CFC8BF",
+          "#F4EDE5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(25.6% 0.018 55.5)",
+        "tonalRamp": [
+          "#0F0A06",
+          "#2B231F",
+          "#49403A",
+          "#695F58",
+          "#8B8078",
+          "#AEA39B",
+          "#D1C7C0",
+          "#F6ECE6"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(43.4% 0.025 62.3)",
+        "tonalRamp": [
+          "#110904",
+          "#2C231B",
+          "#4B4036",
+          "#6B5F54",
+          "#8E7F74",
+          "#B0A297",
+          "#D4C6BB",
+          "#F9ECE1"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On Dark",
+        "canonical": "oklch(94.3% 0.013 75.4)",
+        "tonalRamp": [
+          "#0D0B07",
+          "#282420",
+          "#45413C",
+          "#65605A",
+          "#87817A",
+          "#A9A49D",
+          "#CDC8C2",
+          "#F2EEE7"
+        ]
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "On Dark Soft",
+        "canonical": "oklch(81.8% 0.028 72.8)",
+        "tonalRamp": [
+          "#100A03",
+          "#2C2319",
+          "#4A4034",
+          "#6B5F51",
+          "#8D8070",
+          "#AFA394",
+          "#D3C7B8",
+          "#F8EDDF"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(84.0% 0.021 74.6)",
+        "tonalRamp": [
+          "#0F0A05",
+          "#2A241C",
+          "#484137",
+          "#686055",
+          "#8A8175",
+          "#ACA498",
+          "#D0C8BD",
+          "#F5EDE3"
+        ]
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Rule on Dark",
+        "canonical": "oklch(37.1% 0.025 59.5)",
+        "tonalRamp": [
+          "#110905",
+          "#2C231C",
+          "#4B3F37",
+          "#6B5E54",
+          "#8E7F74",
+          "#B0A297",
+          "#D4C6BC",
+          "#F9ECE2"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "oklch(77.3% 0.025 73.5)",
+        "tonalRamp": [
+          "#100A04",
+          "#2B241A",
+          "#494035",
+          "#695F53",
+          "#8C8072",
+          "#AEA396",
+          "#D2C7BA",
+          "#F7EDE0"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Error Brick",
+        "canonical": "oklch(50.4% 0.135 32.3)",
+        "tonalRamp": [
+          "#280000",
+          "#4D0100",
+          "#742214",
+          "#9C402F",
+          "#C6604C",
+          "#E98672",
+          "#FFAD99",
+          "#FFD4C1"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home hero H1 only, about 15ch, balanced."
+      },
+      "display-inner": {
+        "displayName": "Display Inner",
+        "purpose": "Inner-page H1s, max 18ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section H2s."
+      },
+      "router-title": {
+        "displayName": "Router Title",
+        "purpose": "Large light row titles in the audience router."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "H3s, step titles, card headings."
+      },
+      "term": {
+        "displayName": "Term",
+        "purpose": "Named facts: services, plans, fact values, FAQ questions."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One-sentence intro under H1s, ink-soft, max 36ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All reading text, 62 to 68ch."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Buttons, phone number, arrow links."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase small caps naming a fact or group; never a tagline above a heading."
+      }
+    },
+    "shadows": [
+      {
+        "name": "print-rest",
+        "value": "0 30px 60px -36px rgba(34,26,21,.5)",
+        "purpose": "Under photographs."
+      },
+      {
+        "name": "print-rest-hero",
+        "value": "0 30px 60px -32px rgba(34,26,21,.45)",
+        "purpose": "Hero portrait."
+      },
+      {
+        "name": "inset-print",
+        "value": "0 24px 48px -28px rgba(34,26,21,.55)",
+        "purpose": "Overlapping inset photo with a 6px porcelain mount."
+      },
+      {
+        "name": "ink-press",
+        "value": "0 1px 0 rgba(255,255,255,.06) inset, 0 8px 18px -10px rgba(34,26,21,.55)",
+        "purpose": "Espresso primary button only."
+      },
+      {
+        "name": "dropdown",
+        "value": "0 2px 4px rgba(34,26,21,.06), 0 16px 32px -12px rgba(34,26,21,.28)",
+        "purpose": "Desktop nav dropdown panel."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px rgba(154,116,73,.22)",
+        "purpose": "Soft bronze ring on focused inputs."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Shared long ease-out for every transition."
+      },
+      {
+        "name": "state",
+        "value": ".25s",
+        "purpose": "Button colour, border and lift."
+      },
+      {
+        "name": "router-slide",
+        "value": ".45s",
+        "purpose": "Router title, description and arrow slide."
+      },
+      {
+        "name": "foil-sweep",
+        "value": ".6s",
+        "purpose": "Router foil underline sweep from the left."
+      },
+      {
+        "name": "halo-draw",
+        "value": "1.8s (.2s delay)",
+        "purpose": "One-time draw of the hero halo arc; skipped under reduced motion."
+      },
+      {
+        "name": "action-bar",
+        "value": ".4s",
+        "purpose": "Mobile action bar slide-up."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "480px"
+      },
+      {
+        "name": "form",
+        "value": "560px"
+      },
+      {
+        "name": "sm",
+        "value": "620px"
+      },
+      {
+        "name": "action-bar",
+        "value": "760px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "footer",
+        "value": "900px"
+      },
+      {
+        "name": "services",
+        "value": "980px"
+      },
+      {
+        "name": "nav",
+        "value": "1080px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Espresso \"Book a visit\": the main action on light stock.",
+      "html": "<a class=\"ds-btn ds-btn-dark\" href=\"#\">Book a visit</a>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:.8em 1.5em;border-radius:var(--r);font:700 1rem/1.2 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)} .ds-btn:active{transform:translateY(0) scale(.985)} .ds-btn:focus-visible{outline:2px solid var(--bronze);outline-offset:3px} .ds-btn-dark{background:var(--espresso);color:var(--on-dark);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 8px 18px -10px rgba(34,26,21,.55)} .ds-btn-dark:hover{background:#3A2D24;color:#fff;transform:translateY(-1px)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on light stock, often the phone number.",
+      "html": "<a class=\"ds-btn ds-btn-line\" href=\"#\">Call (905) 941-7580</a>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:.8em 1.5em;border-radius:var(--r);font:700 1rem/1.2 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)} .ds-btn:active{transform:translateY(0) scale(.985)} .ds-btn:focus-visible{outline:2px solid var(--bronze);outline-offset:3px} .ds-btn-line{border-color:var(--line);color:var(--espresso);background:transparent} .ds-btn-line:hover{border-color:var(--bronze);background:rgba(255,255,255,.5)}"
+    },
+    {
+      "name": "Gold Foil Button",
+      "kind": "button",
+      "refersTo": "button-foil",
+      "description": "Primary action inside espresso bands, paired with the ghost button.",
+      "html": "<div style=\"background:#221A15;padding:24px;display:flex;gap:12px;flex-wrap:wrap\"><a class=\"ds-btn ds-btn-foil\" href=\"#\">Book a visit</a><a class=\"ds-btn ds-btn-ghost\" href=\"#\">Ask a question</a></div>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:.8em 1.5em;border-radius:var(--r);font:700 1rem/1.2 var(--sans);letter-spacing:.01em;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease)} .ds-btn:active{transform:translateY(0) scale(.985)} .ds-btn:focus-visible{outline:2px solid var(--bronze);outline-offset:3px} .ds-btn-foil{background:var(--foil);color:var(--espresso)} .ds-btn-foil:hover{background:#DDBB89;transform:translateY(-1px)} .ds-btn-ghost{border-color:var(--line-dark);color:var(--on-dark)} .ds-btn-ghost:hover{border-color:var(--foil);color:#fff} .ds-btn-foil:focus-visible,.ds-btn-ghost:focus-visible{outline-color:var(--foil)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Form field with bold label, white fill and bronze focus ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Your name</span><input class=\"ds-input\" type=\"text\" placeholder=\"First and last name\"></label>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-field{display:flex;flex-direction:column;gap:8px;font-family:var(--sans);color:var(--ink)} .ds-field-label{font-weight:700;font-size:.95rem} .ds-input{font:inherit;font-size:1.05rem;color:var(--ink);background:#fff;border:1px solid #BFB3A4;border-radius:var(--r);padding:12px 14px;min-height:52px;caret-color:var(--bronze);transition:border-color .2s var(--ease),box-shadow .2s var(--ease)} .ds-input:hover{border-color:var(--bronze)} .ds-input:focus{outline:none;border-color:var(--bronze);box-shadow:0 0 0 3px rgba(154,116,73,.22)}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop header links; current page is bronze-text with a bronze underline.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Who I help</a><a href=\"#\">Services</a><a href=\"#\" aria-current=\"page\">Meet Lisa</a><a href=\"#\">Insurance</a><a class=\"ds-tel\" href=\"#\">(905) 941-7580</a></nav>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-nav{display:flex;align-items:center;gap:4px;background:rgba(243,242,240,.94);padding:12px;border-bottom:1px solid var(--line);font-family:var(--sans)} .ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem;border-radius:var(--r)} .ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{color:var(--bronze-text)} .ds-nav a[aria-current=\"page\"]{text-decoration:underline;text-decoration-color:var(--bronze);text-underline-offset:.22em} .ds-nav a:focus-visible{outline:2px solid var(--bronze);outline-offset:3px} .ds-nav .ds-tel{margin-left:auto;color:var(--espresso);font-weight:700;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Town Tag",
+      "kind": "chip",
+      "refersTo": "town-tag",
+      "description": "Static service-area tag with a hairline border.",
+      "html": "<ul class=\"ds-towns\"><li>Windsor</li><li>LaSalle</li><li>Tecumseh</li><li>Amherstburg</li></ul>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-towns{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0;font-family:var(--sans);color:var(--ink)} .ds-towns li{padding:8px 16px;border:1px solid var(--line);border-radius:var(--r);font-size:.98rem;background:rgba(255,255,255,.35)}"
+    },
+    {
+      "name": "Ruled List",
+      "kind": "card",
+      "refersTo": "form-card",
+      "description": "Hairline-ruled rows of named facts: the system's substitute for card grids.",
+      "html": "<ul class=\"ds-plans\"><li><b>Private dental plans</b><abbr>Direct</abbr></li><li><b>Canadian Dental Care Plan</b><abbr>CDCP</abbr></li><li><b>Non-Insured Health Benefits</b><abbr>NIHB</abbr></li></ul>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-plans{list-style:none;margin:0;padding:0;font-family:var(--sans)} .ds-plans li{display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:baseline;padding:22px 0;border-top:1px solid var(--line)} .ds-plans li:last-child{border-bottom:1px solid var(--line)} .ds-plans b{font:500 1.2rem/1.3 var(--serif);color:var(--espresso)} .ds-plans abbr{text-decoration:none;color:var(--bronze-text);font-weight:700;letter-spacing:.06em;font-size:.95rem}"
+    },
+    {
+      "name": "Audience Router",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature: rows on espresso that slide and take a sweeping gold foil underline on hover or focus.",
+      "html": "<ul class=\"ds-router\"><li><a href=\"#\"><span class=\"ds-r-t\">Children</span><span class=\"ds-r-p\">Gentle first visits at home, at their pace.</span><span class=\"ds-r-go\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></li><li><a href=\"#\"><span class=\"ds-r-t\">Seniors &amp; mobility</span><span class=\"ds-r-p\">Care for a parent who can't easily get out.</span><span class=\"ds-r-go\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span></a></li></ul>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-router{list-style:none;margin:0;padding:0 16px;background:var(--espresso);border-top:1px solid var(--foil-line);font-family:var(--sans)} .ds-router li{border-bottom:1px solid var(--foil-line)} .ds-router a{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) auto;gap:16px 32px;align-items:center;padding:28px 4px;color:var(--on-dark);text-decoration:none;isolation:isolate} .ds-router a::before{content:\"\";position:absolute;inset:0;background:var(--espresso-2);opacity:0;z-index:-1;transition:opacity .35s var(--ease)} .ds-router a::after{content:\"\";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--foil);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)} .ds-r-t{font:300 2rem/1.1 var(--serif)} .ds-r-p{color:var(--on-dark-soft)} .ds-r-t,.ds-r-p{transition:transform .45s var(--ease)} .ds-r-go{color:var(--foil);display:inline-flex} .ds-r-go svg{transition:transform .45s var(--ease)} .ds-router a:hover .ds-r-t,.ds-router a:focus-visible .ds-r-t,.ds-router a:hover .ds-r-p,.ds-router a:focus-visible .ds-r-p{transform:translateX(14px)} .ds-router a:hover::before,.ds-router a:focus-visible::before{opacity:1} .ds-router a:hover::after,.ds-router a:focus-visible::after{transform:scaleX(1)} .ds-router a:hover .ds-r-go svg,.ds-router a:focus-visible .ds-r-go svg{transform:translateX(6px)} .ds-router a:focus-visible{outline:2px solid var(--foil);outline-offset:-2px} @media (prefers-reduced-motion:reduce){.ds-r-t,.ds-r-p,.ds-router a::after,.ds-r-go svg{transition:none}.ds-router a:hover .ds-r-t,.ds-router a:hover .ds-r-p,.ds-router a:focus-visible .ds-r-t,.ds-router a:focus-visible .ds-r-p{transform:none}}"
+    },
+    {
+      "name": "Visit Steps",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Numbered ruled rows with large light bronze serif numerals.",
+      "html": "<ol class=\"ds-steps\"><li><h3>Book</h3><p>Pick a time online or call.</p></li><li><h3>Arrive</h3><p>I bring the full portable setup.</p></li></ol>",
+      "css": ":host{--porcelain:#F3F2F0;--linen:#E9E4DD;--espresso:#221A15;--espresso-2:#2E241E;--ink:#2A211B;--ink-soft:#5B4E43;--bronze:#9A7449;--bronze-text:#76572F;--foil:#CDA977;--on-dark:#F1EBE3;--on-dark-soft:#CFC1B0;--line:#D3C9BC;--line-dark:#4A3D33;--foil-line:rgba(205,169,119,.78);--serif:\"Spectral\",Georgia,\"Times New Roman\",serif;--sans:\"Atkinson Hyperlegible Next\",\"Segoe UI\",system-ui,sans-serif;--r:3px;--ease:cubic-bezier(.16,1,.3,1)} .ds-steps{list-style:none;margin:0;padding:0;counter-reset:s;font-family:var(--sans)} .ds-steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:4px 18px;padding:24px 0;border-top:1px solid var(--line)} .ds-steps li:last-child{border-bottom:1px solid var(--line)} .ds-steps li::before{content:counter(s);grid-row:1/3;font:300 2.4rem/1 var(--serif);color:var(--bronze)} .ds-steps h3{margin:0;font:500 1.35rem/1.2 var(--serif);color:var(--espresso)} .ds-steps p{margin:0;color:var(--ink-soft)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Calling Card, Left at Your Door",
+    "overview": "The site reads as fine stationery from a boutique house-call practice. The ground is porcelain card stock, the same near-white the logo sits on, so the logo blends into the page rather than sitting in a box. Espresso ink, the colour of Lisa's scrubs, owns whole bands of the page. Bronze foil appears as hairlines, rules, numerals and the single warm halo arc taken from the logo. Nothing is loud; trust comes from real photographs, plain facts set in quiet ruled lists, and a phone number that is always one tap away.\n\nDensity is generous and editorial: wide section padding, two-column grids that collapse to one column at 860px, and content held to readable measures (36ch ledes, 62 to 68ch prose). Information is organised by hairline rules rather than boxes. Lists of steps, services, billing plans, facts and FAQ answers are all ruled rows on open stock, not cards. Boxed containers are reserved for the things you fill in or must notice (the contact form, a callout figure).\n\nMotion is slow and settled (a long ease-out), never bouncy: the halo arc draws itself once, router rows slide and take a foil underline, arrows nudge. Every movement has a reduced-motion fallback.",
+    "keyCharacteristics": [
+      "Porcelain and linen stock, espresso bands, bronze foil hairlines.",
+      "Light Spectral serif for display; Atkinson Hyperlegible Next for everything read or tapped.",
+      "Hairline-ruled lists instead of card grids.",
+      "Trimmed-card corners (3px) everywhere; no pills, no large radii.",
+      "Soft, long, low shadows only under photographs and the primary button.",
+      "One signature interaction: the audience router on the espresso band."
+    ],
+    "rules": [
+      {
+        "name": "The Foil Is Not Ink Rule",
+        "body": "Raw bronze (bronze) is for rules, numerals, icons, arcs and large serif type only. Any bronze text at body or label size uses bronze-text on light stock or foil on espresso.",
+        "section": "colors"
+      },
+      {
+        "name": "The Logo Stock Rule",
+        "body": "The page ground stays porcelain so the logo (on its own #F2F2F1 ground) sits on the page seamlessly. Do not put the logo on linen, white or espresso.",
+        "section": "colors"
+      },
+      {
+        "name": "The Single Halo Rule",
+        "body": "The only gradient fills in the system are the warm halo glow behind the hero portrait and the fade at the ends of a foil rule. Surfaces, buttons and bands are flat colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Light Serif Rule",
+        "body": "Display and section headings are Spectral at weight 300; weight 500 is reserved for titles and named facts. No bold display type.",
+        "section": "typography"
+      },
+      {
+        "name": "The Label Names a Fact Rule",
+        "body": "Small caps label data (a term, a contact line, a menu group, a footer column). They never sit above a heading as a decorative tagline or restate the heading below them.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bilingual Line",
+        "body": "The Romanian greeting is set as a serif line in bronze-text (300 weight in the home \"hello\", 500 in the language note), marked with lang=\"ro\". It is a typographic statement, not a badge.",
+        "section": "typography"
+      },
+      {
+        "name": "The Resting Print Rule",
+        "body": "Shadows belong to photographs, the primary button and floating menus. Ruled lists, bands, tags and the form card stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the page on porcelain and let espresso take whole bands, not small boxes.",
+      "Do separate list content with 1px hairlines (line on light stock, foil-line on espresso) instead of boxing it into cards.",
+      "Do use bronze-text for any bronze text at body or label size, and raw bronze only for rules, numerals, icons and arcs.",
+      "Do keep every corner at 3px.",
+      "Do set headings in Spectral 300 and reading text in Atkinson Hyperlegible Next at no less than about 1.06rem.",
+      "Do give every motion a reduced-motion fallback and use the shared long ease-out curve.",
+      "Do keep tap targets at least 44px (buttons 52px) and keep the phone number one tap away on every page.",
+      "Do use real photographs cropped to the print ratios (3:4, 4:5, 1:1, 4:3) with the Print Rest shadow."
+    ],
+    "donts": [
+      "Don't use gradient fills on surfaces, buttons or bands; the halo glow and the foil-rule fade are the only gradients.",
+      "Don't use pill shapes or radii above 3px.",
+      "Don't use hard or offset shadows, or put shadows on ruled lists, bands or tags.",
+      "Don't put small-caps labels above headings as taglines; labels name facts.",
+      "Don't set small text in raw bronze on porcelain; it fails contrast.",
+      "Don't use translucent glass panels; the sticky header and action bar stay 94 to 96% opaque porcelain.",
+      "Don't add a new accent hue; the palette is porcelain, linen, espresso and bronze."
+    ]
+  }
+}

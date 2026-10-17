@@ -509,10 +509,11 @@
           </li>
         </ul>
       </div>
-      <form class="form-card" data-form novalidate>
+      <form class="form-card" data-form novalidate action="https://api.web3forms.com/submit" method="POST">
         <h3>Tell me about your home</h3>
         <p class="note">Please share general details only: the number of residents and the kind of support you’re looking for.</p>
         <input type="hidden" name="subject" value="New care-home inquiry from mobilesmilecare.ca">
+        <input type="hidden" name="access_key" value="c8442fae-15a3-4455-824e-184189a23934">
         <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field-row">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
