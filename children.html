@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Children’s Dental Cleanings at Home | Windsor &amp; Essex | Mobile Smile Care</title>
-<meta name="description" content="Gentle dental hygiene visits for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and hands-on brushing practice, with no waiting room. CDCP and HSO billed directly.">
+<title>Children’s Dental Cleanings at Home | Windsor &amp; Essex</title>
+<meta name="description" content="Dental hygiene for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and brushing practice. CDCP and Healthy Smiles Ontario billed directly.">
 <link rel="canonical" href="https://www.mobilesmilecare.ca/children.html">
 <meta name="theme-color" content="#F3F2F0">
-<link rel="icon" href="img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="img/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Smile Care: Dental Hygiene">
 <meta property="og:title" content="Children’s dental hygiene at home | Windsor &amp; Essex">
-<meta property="og:description" content="Gentle dental hygiene visits for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and hands-on brushing practice, with no waiting room. CDCP and HSO billed directly.">
+<meta property="og:description" content="Dental hygiene for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and brushing practice. CDCP and Healthy Smiles Ontario billed directly.">
 <meta property="og:url" content="https://www.mobilesmilecare.ca/children.html">
 <meta property="og:image" content="https://www.mobilesmilecare.ca/img/og-image.jpg">
 <meta property="og:image:width" content="1200">
@@ -28,10 +29,16 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "MedicalBusiness",
+   "@type": [
+    "MedicalBusiness",
+    "MedicalOrganization"
+   ],
    "@id": "https://www.mobilesmilecare.ca/#business",
    "name": "Mobile Smile Care: Dental Hygiene",
-   "alternateName": "Mobile Smile Care",
+   "alternateName": [
+    "Mobile Smile Care",
+    "Smile Care Mobile Dental Hygiene"
+   ],
    "description": "Mobile dental hygiene practice. A Registered Dental Hygienist provides cleanings and preventive dental hygiene care at home, at work, and in long-term care and retirement homes across Windsor and Essex County, Ontario.",
    "url": "https://www.mobilesmilecare.ca/",
    "telephone": "+1-905-941-7580",
@@ -41,10 +48,16 @@
     "https://www.mobilesmilecare.ca/img/og-image.jpg",
     "https://www.mobilesmilecare.ca/img/lisa-hero-1200.webp"
    ],
-   "medicalSpecialty": "Dentistry",
+   "medicalSpecialty": "https://schema.org/Dentistry",
    "knowsLanguage": [
     "en",
     "ro"
+   ],
+   "knowsAbout": [
+    "Dental hygiene",
+    "Preventive dental care",
+    "Mobile dental care",
+    "Oral health for seniors and people living with dementia"
    ],
    "address": {
     "@type": "PostalAddress",
@@ -55,55 +68,55 @@
    "areaServed": [
     {
      "@type": "City",
-     "name": "Windsor"
+     "name": "Windsor, Ontario"
     },
     {
      "@type": "City",
-     "name": "LaSalle"
+     "name": "LaSalle, Ontario"
     },
     {
      "@type": "City",
-     "name": "Tecumseh"
+     "name": "Tecumseh, Ontario"
     },
     {
      "@type": "City",
-     "name": "Amherstburg"
+     "name": "Amherstburg, Ontario"
     },
     {
      "@type": "City",
-     "name": "Lakeshore"
+     "name": "Lakeshore, Ontario"
     },
     {
      "@type": "City",
-     "name": "Belle River"
+     "name": "Belle River, Ontario"
     },
     {
      "@type": "City",
-     "name": "Essex"
+     "name": "Essex, Ontario"
     },
     {
      "@type": "City",
-     "name": "Kingsville"
+     "name": "Kingsville, Ontario"
     },
     {
      "@type": "City",
-     "name": "Leamington"
+     "name": "Leamington, Ontario"
     },
     {
      "@type": "City",
-     "name": "Harrow"
+     "name": "Harrow, Ontario"
     },
     {
      "@type": "City",
-     "name": "McGregor"
+     "name": "McGregor, Ontario"
     },
     {
      "@type": "City",
-     "name": "Comber"
+     "name": "Comber, Ontario"
     },
     {
      "@type": "AdministrativeArea",
-     "name": "Essex County, Ontario"
+     "name": "Windsor and Essex County, Ontario"
     }
    ],
    "openingHoursSpecification": [
@@ -126,37 +139,72 @@
      "closes": "18:00"
     }
    ],
-   "paymentAccepted": "Direct billing to insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP",
-   "availableService": [
-    {
-     "@type": "MedicalProcedure",
-     "name": "Dental cleaning (scaling and polishing)"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Oral hygiene assessment and home-care coaching"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Fluoride varnish"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Pit and fissure sealants"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Oral cancer screening"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Silver diamine fluoride"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Interim stabilization therapy"
-    }
-   ],
+   "paymentAccepted": "Direct billing to private dental insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP, Healthy Smiles Ontario",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile dental hygiene services",
+    "itemListElement": [
+     {
+      "@type": "Service",
+      "name": "Oral hygiene review",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Scaling",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Stain removal and polishing",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Oral cancer screening",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Fluoride varnish",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Pit and fissure sealants",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Silver diamine fluoride",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Interim stabilization therapy",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Referrals to dentists and specialists",
+      "serviceType": "Dental hygiene"
+     }
+    ]
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "appointments",
+    "telephone": "+1-905-941-7580",
+    "email": "mobilesmilecaredental@gmail.com",
+    "areaServed": "CA",
+    "availableLanguage": [
+     "English",
+     "Romanian"
+    ]
+   },
+   "founder": {
+    "@id": "https://www.mobilesmilecare.ca/#lisa"
+   },
    "employee": {
     "@id": "https://www.mobilesmilecare.ca/#lisa"
    },
@@ -170,9 +218,11 @@
    "@id": "https://www.mobilesmilecare.ca/#lisa",
    "name": "Lisa Suciu",
    "jobTitle": "Registered Dental Hygienist",
+   "description": "Registered Dental Hygienist providing mobile dental hygiene in Windsor and Essex County, Ontario. Niagara College dental hygiene graduate, in practice since 2019; speaks English and Romanian.",
    "alumniOf": {
     "@type": "CollegeOrUniversity",
-    "name": "Niagara College"
+    "name": "Niagara College",
+    "url": "https://www.niagaracollege.ca/"
    },
    "knowsLanguage": [
     "en",
@@ -185,21 +235,40 @@
    "url": "https://www.mobilesmilecare.ca/meet-lisa.html"
   },
   {
+   "@type": "WebSite",
+   "@id": "https://www.mobilesmilecare.ca/#website",
+   "url": "https://www.mobilesmilecare.ca/",
+   "name": "Mobile Smile Care: Dental Hygiene",
+   "alternateName": "Mobile Smile Care",
+   "publisher": {
+    "@id": "https://www.mobilesmilecare.ca/#business"
+   },
+   "inLanguage": "en-CA"
+  },
+  {
    "@type": "WebPage",
    "@id": "https://www.mobilesmilecare.ca/children.html#webpage",
    "url": "https://www.mobilesmilecare.ca/children.html",
-   "name": "Children’s Dental Cleanings at Home | Windsor & Essex | Mobile Smile Care",
-   "description": "Gentle dental hygiene visits for children at home in Windsor & Essex: cleanings, fluoride, sealants and hands-on brushing practice, with no waiting room. CDCP and HSO billed directly.",
+   "name": "Children’s Dental Cleanings at Home | Windsor & Essex",
+   "description": "Dental hygiene for children at home in Windsor & Essex: cleanings, fluoride, sealants and brushing practice. CDCP and Healthy Smiles Ontario billed directly.",
    "inLanguage": "en-CA",
    "isPartOf": {
     "@id": "https://www.mobilesmilecare.ca/#website"
    },
    "about": {
     "@id": "https://www.mobilesmilecare.ca/#business"
+   },
+   "dateModified": "2026-10-17",
+   "mainEntity": {
+    "@id": "https://www.mobilesmilecare.ca/children.html#service"
+   },
+   "breadcrumb": {
+    "@id": "https://www.mobilesmilecare.ca/children.html#breadcrumb"
    }
   },
   {
    "@type": "BreadcrumbList",
+   "@id": "https://www.mobilesmilecare.ca/children.html#breadcrumb",
    "itemListElement": [
     {
      "@type": "ListItem",
@@ -217,16 +286,72 @@
   },
   {
    "@type": "Service",
+   "@id": "https://www.mobilesmilecare.ca/children.html#service",
    "name": "Mobile dental hygiene for children",
+   "description": "Dental hygiene visits for children at home: cleaning, fluoride varnish, sealants and hands-on brushing instruction.",
    "serviceType": "Dental hygiene",
+   "audience": {
+    "@type": "Audience",
+    "audienceType": "Parents of children and teens"
+   },
    "provider": {
     "@id": "https://www.mobilesmilecare.ca/#business"
    },
    "url": "https://www.mobilesmilecare.ca/children.html",
-   "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Windsor and Essex County, Ontario"
-   }
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Windsor, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "LaSalle, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Tecumseh, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Amherstburg, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Lakeshore, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Belle River, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Essex, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Kingsville, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Leamington, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Harrow, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "McGregor, Ontario"
+    },
+    {
+     "@type": "City",
+     "name": "Comber, Ontario"
+    },
+    {
+     "@type": "AdministrativeArea",
+     "name": "Windsor and Essex County, Ontario"
+    }
+   ]
   }
  ]
 }
@@ -250,7 +375,7 @@
 
 <header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <img src="img/mark-96.png" width="30" height="33" alt="">
       <span class="brand-name"><b>Mobile Smile Care</b><span>Dental Hygiene</span></span>
     </a>
@@ -258,16 +383,16 @@
       <details class="navmenu">
         <summary>Who I help <svg aria-hidden="true"><use href="#i-chev"/></svg></summary>
         <ul>
-          <li><a href="children.html" aria-current="page">Children<small>Gentle first visits at home</small></a></li>
+          <li><a href="children.html" aria-current="page">Children<small>First visits at home</small></a></li>
           <li><a href="busy-professionals.html">Busy professionals<small>At home or at work</small></a></li>
           <li><a href="seniors-mobility.html">Seniors &amp; limited mobility<small>Unhurried care at home</small></a></li>
           <li><a href="care-homes.html">Care homes<small>On-site for residents</small></a></li>
         </ul>
       </details>
-      <a href="index.html#services">Services</a>
+      <a href="./#services">Services</a>
       <a href="insurance.html">Insurance</a>
       <a href="meet-lisa.html">Meet Lisa</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="./#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <a class="tel tel-text" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>(905) 941-7580</a>
@@ -282,11 +407,11 @@
           <a href="seniors-mobility.html">Seniors &amp; limited mobility <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a href="care-homes.html">Care homes <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <span class="caps">More</span>
-          <a href="index.html#services">Services</a>
+          <a href="./#services">Services</a>
           <a href="insurance.html">Insurance &amp; billing</a>
           <a href="meet-lisa.html">Meet Lisa</a>
           <a href="patient-forms.html">Patient forms</a>
-          <a href="index.html#faq">FAQ</a>
+          <a href="./#faq">FAQ</a>
           <a class="btn btn--dark" href="#contact" data-book>Book a visit</a>
         </nav>
       </details>
@@ -298,9 +423,9 @@
   <section class="page-head" aria-labelledby="page-title">
     <div class="wrap split">
       <div>
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <span aria-current="page">Children</span></nav>
-        <h1 id="page-title">Children’s dental hygiene, at home</h1>
-        <p class="lede">A cleaning on your child’s terms: no waiting room, no rush, and one-on-one time to make it fun.</p>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / <span aria-current="page">Children</span></nav>
+        <h1 id="page-title">Children’s dental hygiene at home in Windsor &amp; Essex</h1>
+        <p class="lede">A relaxed teeth cleaning at home in Windsor &amp; Essex, on your child’s terms: no waiting room, no rush, and one-on-one time with a Registered Dental Hygienist.</p>
         <div class="hero-actions">
           <a class="btn btn--dark" href="#contact" data-book><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>
           <a class="btn btn--line" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call (905) 941-7580</a>
@@ -329,6 +454,7 @@
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>One-on-one attention, with nothing rushed</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>Brushing and flossing they can actually keep up</li>
         </ul>
+        <p style="margin-top:28px"><a class="arrow-link" href="meet-lisa.html">Meet Lisa, your hygienist <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>
     </div>
   </section>
@@ -339,7 +465,7 @@
         <span class="big">By age one</span>
         <div>
           <h3 id="first-title">When to book the first visit</h3>
-          <p>Children should have their first dental visit within six months of their first tooth appearing, or by their first birthday, whichever comes first. Early, gentle visits catch problems before they hurt, help your child feel safe about dental care, and give you practical tips for cleaning tiny teeth and managing habits like thumb-sucking.</p>
+          <p>Children should have their first dental visit within six months of their first tooth appearing, or by their first birthday, whichever comes first. Early visits catch problems before they hurt, help your child feel safe about dental care, and give you practical tips for cleaning tiny teeth and managing habits like thumb-sucking.</p>
         </div>
       </div>
     </div>
@@ -352,7 +478,7 @@
         <p>Every visit is adapted to your child’s age and comfort.</p>
       </div>
       <dl class="services">
-        <div><dt>Gentle cleaning</dt><dd>Careful scaling and tartar removal, at your child’s pace.</dd></div>
+        <div><dt>Cleaning</dt><dd>Careful scaling and tartar removal, at your child’s pace.</dd></div>
         <div><dt>Fluoride varnish</dt><dd>Helps protect new teeth from decay.</dd></div>
         <div><dt>Sealants</dt><dd>A protective coating for the grooves of back teeth.</dd></div>
         <div><dt>Hands-on instruction</dt><dd>Brushing and flossing practice, with models to play and learn with.</dd></div>
@@ -366,10 +492,10 @@
     <div class="wrap two-col">
       <h2 id="cover-title">Coverage for kids</h2>
       <div>
-        <p>Many families qualify for fully funded children’s dental care. I bill these programs directly:</p>
+        <p>Many families qualify for government dental coverage for their children, often at little or no cost. I bill these programs directly:</p>
         <ul class="checklist">
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Canadian Dental Care Plan (CDCP)</b> for eligible children in qualifying households</span></li>
-          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Healthy Smiles Ontario</b> for children and youth 17 and under in eligible households</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b><a href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan.html" rel="noopener" target="_blank">Canadian Dental Care Plan (CDCP)</a></b> for eligible children in qualifying households</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b><a href="https://www.ontario.ca/page/get-dental-care" rel="noopener" target="_blank">Healthy Smiles Ontario</a></b> for children and youth 17 and under in eligible households</span></li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><b>Private insurance</b>, with direct billing to most major providers</span></li>
         </ul>
         <p style="margin-top:28px"><a class="arrow-link" href="insurance.html">How billing works <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
@@ -385,7 +511,7 @@
         <p class="lede" style="margin-top:18px">Call or text, or send a question and I’ll reply personally.</p>
         <ul class="contact-lines">
           <li><span class="caps">Phone</span><a href="tel:+19059417580">(905) 941-7580</a></li>
-          <li><span class="caps">Email</span><a href="mailto:mobilesmilecaredental@gmail.com">mobilesmilecaredental@gmail.com</a></li>
+          <li><span class="caps">Email</span><a href="mailto:mobilesmilecaredental@gmail.com">mobilesmilecaredental@<wbr>gmail.com</a></li>
           <li><span class="caps">Hours</span>
             <dl class="hours"><dt>Friday</dt><dd>6 – 9 pm</dd><dt>Saturday</dt><dd>10 am – 8 pm</dd><dt>Sunday</dt><dd>10 am – 6 pm</dd></dl>
           </li>
@@ -418,8 +544,8 @@
     <div class="footer-grid">
       <div>
         <img class="brand-mark" src="img/mark-96.png" width="34" height="37" alt="">
-        <h2>Mobile Smile Care: Dental Hygiene</h2>
-        <p>Professional dental hygiene at home, at work and in care residences across Windsor &amp; Essex County.</p>
+        <p class="foot-name">Mobile Smile Care: Dental Hygiene</p>
+        <p>Mobile Smile Care: Dental Hygiene is the mobile practice of Lisa Suciu, Registered Dental Hygienist, serving Windsor and Essex County, Ontario, in English and Romanian.</p>
         <div class="socials">
           <a href="https://www.instagram.com/mobile.smilecare/" aria-label="Instagram" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
           <a href="https://www.facebook.com/mobilesmilecaredentalhygiene/" aria-label="Facebook" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
@@ -440,7 +566,7 @@
           <li><a href="meet-lisa.html">Meet Lisa</a></li>
           <li><a href="insurance.html">Insurance &amp; billing</a></li>
           <li><a href="patient-forms.html">Patient forms</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="./#faq">FAQ</a></li>
         </ul>
       </div>
       <div>

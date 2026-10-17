@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-17T06:25:47.056Z",
+        "reason": "Claude verified in 1440/375 screenshots: full-bleed bands get inset from inner .wrap padding, and hairline-ruled lists have row padding; detector misreads both"
+      }
+    ]
+  }
+}

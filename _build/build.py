@@ -7,6 +7,7 @@ Folders starting with "_" are not published by GitHub Pages.
 """
 import json
 import os
+import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://www.mobilesmilecare.ca/"
@@ -19,12 +20,16 @@ FORM_KEY = "c8442fae-15a3-4455-824e-184189a23934"
 
 TOWNS = ["Windsor", "LaSalle", "Tecumseh", "Amherstburg", "Lakeshore", "Belle River",
          "Essex", "Kingsville", "Leamington", "Harrow", "McGregor", "Comber"]
+REGION = "Windsor and Essex County, Ontario"
+AREA = ([{"@type": "City", "name": t + ", Ontario"} for t in TOWNS]
+        + [{"@type": "AdministrativeArea", "name": REGION}])
+MODIFIED = "2026-10-17"  # update when page content changes
 
 BUSINESS = {
-    "@type": "MedicalBusiness",
+    "@type": ["MedicalBusiness", "MedicalOrganization"],
     "@id": SITE + "#business",
     "name": NAME,
-    "alternateName": "Mobile Smile Care",
+    "alternateName": ["Mobile Smile Care", "Smile Care Mobile Dental Hygiene"],
     "description": ("Mobile dental hygiene practice. A Registered Dental Hygienist provides cleanings and "
                     "preventive dental hygiene care at home, at work, and in long-term care and retirement "
                     "homes across Windsor and Essex County, Ontario."),
@@ -33,21 +38,25 @@ BUSINESS = {
     "email": EMAIL,
     "logo": SITE + "img/logo-720.webp",
     "image": [SITE + "img/og-image.jpg", SITE + "img/lisa-hero-1200.webp"],
-    "medicalSpecialty": "Dentistry",
+    "medicalSpecialty": "https://schema.org/Dentistry",
     "knowsLanguage": ["en", "ro"],
+    "knowsAbout": ["Dental hygiene", "Preventive dental care", "Mobile dental care", "Oral health for seniors and people living with dementia"],
     "address": {"@type": "PostalAddress", "addressLocality": "Windsor", "addressRegion": "ON", "addressCountry": "CA"},
-    "areaServed": [{"@type": "City", "name": t} for t in TOWNS]
-                  + [{"@type": "AdministrativeArea", "name": "Essex County, Ontario"}],
+    "areaServed": AREA,
     "openingHoursSpecification": [
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "18:00", "closes": "21:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "20:00"},
         {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00"},
     ],
-    "paymentAccepted": "Direct billing to insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP",
-    "availableService": [{"@type": "MedicalProcedure", "name": n} for n in [
-        "Dental cleaning (scaling and polishing)", "Oral hygiene assessment and home-care coaching",
-        "Fluoride varnish", "Pit and fissure sealants", "Oral cancer screening",
-        "Silver diamine fluoride", "Interim stabilization therapy"]],
+    "paymentAccepted": "Direct billing to private dental insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP, Healthy Smiles Ontario",
+    "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Mobile dental hygiene services", "itemListElement": [
+        {"@type": "Service", "name": n, "serviceType": "Dental hygiene"} for n in [
+            "Oral hygiene review", "Scaling", "Stain removal and polishing", "Oral cancer screening",
+            "Fluoride varnish", "Pit and fissure sealants", "Silver diamine fluoride",
+            "Interim stabilization therapy", "Referrals to dentists and specialists"]]},
+    "contactPoint": {"@type": "ContactPoint", "contactType": "appointments", "telephone": "+1-905-941-7580",
+                     "email": EMAIL, "areaServed": "CA", "availableLanguage": ["English", "Romanian"]},
+    "founder": {"@id": SITE + "#lisa"},
     "employee": {"@id": SITE + "#lisa"},
     "sameAs": ["https://www.instagram.com/mobile.smilecare/", "https://www.facebook.com/mobilesmilecaredentalhygiene/"],
 }
@@ -57,7 +66,9 @@ LISA = {
     "@id": SITE + "#lisa",
     "name": "Lisa Suciu",
     "jobTitle": "Registered Dental Hygienist",
-    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Niagara College"},
+    "description": ("Registered Dental Hygienist providing mobile dental hygiene in Windsor and Essex County, Ontario. "
+                    "Niagara College dental hygiene graduate, in practice since 2019; speaks English and Romanian."),
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Niagara College", "url": "https://www.niagaracollege.ca/"},
     "knowsLanguage": ["en", "ro"],
     "worksFor": {"@id": SITE + "#business"},
     "image": SITE + "img/lisa-portrait-800.webp",
@@ -65,16 +76,20 @@ LISA = {
 }
 
 HOME_FAQ = [
+    ("What is mobile dental hygiene?", "Professional dental hygiene care brought to you. Instead of travelling to a clinic, I come to your home, workplace or care residence with all the equipment needed for a complete, comfortable visit."),
+    ("Are you a dentist?", "No. I’m a Registered Dental Hygienist. I provide cleanings and preventive care, and refer you to a trusted dentist for treatment such as fillings or extractions."),
     ("What do I need for a home visit?", "Very little: a comfortable place to sit or recline, an electrical outlet and a nearby sink. I bring all the equipment and follow strict infection-control protocols."),
-    ("Is a mobile cleaning as thorough as one at a clinic?", "Yes. I use clinic-grade portable equipment and sterilized instruments, and every visit includes the same assessment, scaling and polishing you’d receive in a clinic."),
-    ("Do you bill my insurance directly?", "Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB and ODSP."),
+    ("How does a mobile visit compare to a clinic visit?", "You get a complete hygiene appointment (assessment, scaling and polishing) with clinic-grade portable equipment, sterilized instruments, and the same professional and infection-control standards that apply in any clinic."),
+    ("Do you bill my insurance directly?", "Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB, ODSP and Healthy Smiles Ontario. <a href=\"insurance.html\">See insurance details</a>."),
     ("Am I eligible for the CDCP?", "The Canadian Dental Care Plan covers eligible Canadian residents who meet income requirements and don’t have access to private dental insurance. I’m happy to help you check your coverage."),
-    ("Do you visit long-term care and retirement homes?", "Yes. I provide on-site care in long-term care homes, retirement residences, assisted living and memory care, with no resident transport."),
+    ("Do you visit long-term care and retirement homes?", "Yes. I provide on-site care in long-term care homes, retirement residences, assisted living and memory care, with no resident transport. <a href=\"care-homes.html\">Details for care homes</a>."),
+    ("What areas do you serve?", "Windsor and Essex County, including LaSalle, Tecumseh, Amherstburg, Lakeshore, Belle River, Essex, Kingsville, Leamington, Harrow, McGregor and Comber. Not sure if I reach you? Just ask."),
+    ("Can my visit be in Romanian?", "Yes. I speak English and Romanian, so your visit can be in whichever you prefer."),
     ("Is there a travel fee?", "A small travel fee may apply depending on where you are. We’ll confirm it together when you book."),
 ]
 
 AUDIENCE = [
-    ("children.html", "Children", "Gentle first visits at home"),
+    ("children.html", "Children", "First visits at home"),
     ("busy-professionals.html", "Busy professionals", "At home or at work"),
     ("seniors-mobility.html", "Seniors &amp; limited mobility", "Unhurried care at home"),
     ("care-homes.html", "Care homes", "On-site for residents"),
@@ -87,37 +102,49 @@ PAGES = [
          og_title="Mobile dental hygiene, brought to your door | Windsor &amp; Essex",
          preload_hero="lisa-hero", form_for="Myself", faq=HOME_FAQ),
     dict(slug="children", file="children.html", path="children.html", crumb="Children",
-         title="Children’s Dental Cleanings at Home | Windsor &amp; Essex | Mobile Smile Care",
-         description="Gentle dental hygiene visits for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and hands-on brushing practice, with no waiting room. CDCP and HSO billed directly.",
+         title="Children’s Dental Cleanings at Home | Windsor &amp; Essex",
+         description="Dental hygiene for children at home in Windsor &amp; Essex: cleanings, fluoride, sealants and brushing practice. CDCP and Healthy Smiles Ontario billed directly.",
          og_title="Children’s dental hygiene at home | Windsor &amp; Essex",
-         service="Mobile dental hygiene for children", form_for="My child"),
+         service="Mobile dental hygiene for children", audience="Parents of children and teens",
+         service_desc="Dental hygiene visits for children at home: cleaning, fluoride varnish, sealants and hands-on brushing instruction.",
+         form_for="My child"),
     dict(slug="busy-professionals", file="busy-professionals.html", path="busy-professionals.html", crumb="Busy professionals",
-         title="Dental Cleanings at Home or at Work | Windsor &amp; Essex | Mobile Smile Care",
-         description="A full dental hygiene appointment at your home or workplace in Windsor &amp; Essex: assessment, scaling and polishing with no commute and no waiting room. Direct billing.",
+         title="Teeth Cleaning at Home or at Work | Windsor &amp; Essex",
+         description="A full teeth cleaning at your home or workplace in Windsor &amp; Essex: assessment, scaling and polishing, with no commute and no waiting room. Direct billing.",
          og_title="Dental cleanings at home or at work | Windsor &amp; Essex",
-         service="Mobile dental hygiene at home or at work", form_for="Myself"),
+         service="Mobile dental hygiene at home or at work", audience="Working adults",
+         service_desc="A full dental hygiene appointment (assessment, scaling and polishing) at your home or workplace.",
+         form_for="Myself"),
     dict(slug="seniors-mobility", file="seniors-mobility.html", path="seniors-mobility.html", crumb="Seniors &amp; limited mobility",
-         title="Dental Hygiene at Home for Seniors &amp; Limited Mobility | Windsor &amp; Essex",
+         title="Seniors’ Dental Hygiene at Home | Windsor &amp; Essex",
          description="Unhurried, dementia-informed dental hygiene at home for seniors and anyone with limited mobility in Windsor &amp; Essex County. Direct billing, CDCP accepted.",
-         og_title="Gentle dental hygiene at home for seniors | Windsor &amp; Essex",
-         service="Mobile dental hygiene for seniors and people with limited mobility", form_for="A parent or senior"),
+         og_title="Dental hygiene at home for seniors | Windsor &amp; Essex",
+         service="Mobile dental hygiene for seniors and people with limited mobility", audience="Seniors, people living with dementia and people with limited mobility",
+         service_desc="Unhurried, dementia-informed dental hygiene at home, with time for breaks.",
+         form_for="A parent or senior"),
     dict(slug="care-homes", file="care-homes.html", path="care-homes.html", crumb="Care homes",
-         title="On-Site Dental Hygiene for Long-Term Care &amp; Retirement Homes | Windsor &amp; Essex",
-         description="On-site dental hygiene for residents of long-term care and retirement homes in Windsor &amp; Essex County. No resident transport, no cost to your facility, notes after every visit.",
+         title="Dental Hygiene for Long-Term Care Homes | Windsor &amp; Essex",
+         description="On-site dental hygiene for long-term care and retirement home residents in Windsor &amp; Essex. No transport, no cost to your facility, notes after every visit.",
          og_title="On-site dental hygiene for care homes | Windsor &amp; Essex",
-         service="On-site dental hygiene for long-term care and retirement homes", form_for="A care home"),
+         service="On-site dental hygiene for long-term care and retirement homes", audience="Long-term care and retirement home residents and administrators",
+         service_desc="On-site dental hygiene for residents, billed to each resident's own coverage, with notes after every visit.",
+         form_for="A care home"),
     dict(slug="insurance", file="insurance.html", path="insurance.html", crumb="Insurance &amp; billing",
-         title="Insurance &amp; Direct Billing: CDCP, NIHB, ODSP | Mobile Smile Care",
-         description="How direct billing works for mobile dental hygiene in Windsor &amp; Essex: private plans, the Canadian Dental Care Plan (CDCP), NIHB, ODSP and Healthy Smiles Ontario.",
+         title="CDCP Dental Hygienist in Windsor &amp; Essex | Direct Billing",
+         description="Direct billing for mobile dental hygiene in Windsor &amp; Essex: private plans, the Canadian Dental Care Plan (CDCP), NIHB, ODSP and Healthy Smiles Ontario.",
          og_title="Insurance &amp; direct billing | Mobile Smile Care", form_for="Not sure yet"),
     dict(slug="meet-lisa", file="meet-lisa.html", path="meet-lisa.html", crumb="Meet Lisa",
          title="Meet Lisa Suciu, RDH | Mobile Dental Hygienist in Windsor",
-         description="Lisa Suciu is a Registered Dental Hygienist and Niagara College graduate with 7 years of experience, providing mobile dental hygiene in English and Romanian across Windsor &amp; Essex.",
+         description="Lisa Suciu, RDH, is a Niagara College-trained dental hygienist providing mobile dental hygiene in English and Romanian across Windsor &amp; Essex County.",
          og_title="Meet Lisa Suciu, Registered Dental Hygienist", profile=True, form_for="Myself"),
     dict(slug="patient-forms", file="patient-forms.html", path="patient-forms.html", crumb="Patient forms",
          title="Patient Forms | Mobile Smile Care: Dental Hygiene",
          description="How intake and medical history forms work for your mobile dental hygiene visit with Mobile Smile Care in Windsor &amp; Essex.",
          og_title="Patient forms | Mobile Smile Care", form_for="Myself"),
+    dict(slug="404", file="404.html", path="404.html", crumb="Page not found", noindex=True,
+         title="Page not found | Mobile Smile Care: Dental Hygiene",
+         description="This page doesn’t exist. Find mobile dental hygiene in Windsor &amp; Essex County from the home page.",
+         og_title="Page not found | Mobile Smile Care", form_for="Myself"),
 ]
 
 SPRITE = """<svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -150,7 +177,7 @@ def header(p):
         f'          <a href="{f}"{aria(f)}>{label} {arrow(22)}</a>' for f, label, _ in AUDIENCE)
     return f"""<header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <img src="img/mark-96.png" width="30" height="33" alt="">
       <span class="brand-name"><b>Mobile Smile Care</b><span>Dental Hygiene</span></span>
     </a>
@@ -161,10 +188,10 @@ def header(p):
 {menu_items}
         </ul>
       </details>
-      <a href="index.html#services">Services</a>
+      <a href="./#services">Services</a>
       <a href="insurance.html"{aria("insurance.html")}>Insurance</a>
       <a href="meet-lisa.html"{aria("meet-lisa.html")}>Meet Lisa</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="./#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <a class="tel tel-text" href="tel:{PHONE_TEL}"><svg aria-hidden="true"><use href="#i-phone"/></svg>{PHONE}</a>
@@ -176,11 +203,11 @@ def header(p):
           <span class="caps">Who I help</span>
 {sheet_items}
           <span class="caps">More</span>
-          <a href="index.html#services">Services</a>
+          <a href="./#services">Services</a>
           <a href="insurance.html"{aria("insurance.html")}>Insurance &amp; billing</a>
           <a href="meet-lisa.html"{aria("meet-lisa.html")}>Meet Lisa</a>
           <a href="patient-forms.html"{aria("patient-forms.html")}>Patient forms</a>
-          <a href="index.html#faq">FAQ</a>
+          <a href="./#faq">FAQ</a>
           <a class="btn btn--dark" href="{BOOK_HREF}" data-book>Book a visit</a>
         </nav>
       </details>
@@ -208,7 +235,7 @@ def contact(p):
         <p class="lede" style="margin-top:18px">{lede}</p>
         <ul class="contact-lines">
           <li><span class="caps">Phone</span><a href="tel:{PHONE_TEL}">{PHONE}</a></li>
-          <li><span class="caps">Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></li>
+          <li><span class="caps">Email</span><a href="mailto:{EMAIL}">{EMAIL.replace("@", "@<wbr>")}</a></li>
           <li><span class="caps">Hours</span>
             <dl class="hours"><dt>Friday</dt><dd>6 – 9 pm</dd><dt>Saturday</dt><dd>10 am – 8 pm</dd><dt>Sunday</dt><dd>10 am – 6 pm</dd></dl>
           </li>
@@ -242,8 +269,8 @@ def footer():
     <div class="footer-grid">
       <div>
         <img class="brand-mark" src="img/mark-96.png" width="34" height="37" alt="">
-        <h2>{NAME}</h2>
-        <p>Professional dental hygiene at home, at work and in care residences across Windsor &amp; Essex County.</p>
+        <p class="foot-name">{NAME}</p>
+        <p>{NAME} is the mobile practice of Lisa Suciu, Registered Dental Hygienist, serving Windsor and Essex County, Ontario, in English and Romanian.</p>
         <div class="socials">
           <a href="https://www.instagram.com/mobile.smilecare/" aria-label="Instagram" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
           <a href="https://www.facebook.com/mobilesmilecaredentalhygiene/" aria-label="Facebook" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
@@ -261,7 +288,7 @@ def footer():
           <li><a href="meet-lisa.html">Meet Lisa</a></li>
           <li><a href="insurance.html">Insurance &amp; billing</a></li>
           <li><a href="patient-forms.html">Patient forms</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="./#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -289,32 +316,43 @@ def plain(s):
 
 def schema(p):
     url = SITE + p["path"]
-    graph = [BUSINESS, LISA]
+    graph = [BUSINESS, LISA,
+             {"@type": "WebSite", "@id": SITE + "#website", "url": SITE, "name": NAME,
+              "alternateName": "Mobile Smile Care", "publisher": {"@id": SITE + "#business"}, "inLanguage": "en-CA"}]
     page = {"@type": "ProfilePage" if p.get("profile") else "WebPage", "@id": url + "#webpage", "url": url,
             "name": plain(p["title"]), "description": plain(p["description"]), "inLanguage": "en-CA",
-            "isPartOf": {"@id": SITE + "#website"}, "about": {"@id": SITE + "#business"}}
+            "isPartOf": {"@id": SITE + "#website"}, "about": {"@id": SITE + "#business"},
+            "dateModified": MODIFIED}
     if p.get("profile"):
         page["mainEntity"] = {"@id": SITE + "#lisa"}
+        page["dateCreated"] = MODIFIED
+    if p.get("service"):
+        page["mainEntity"] = {"@id": url + "#service"}
+    if p["slug"] != "index":
+        page["breadcrumb"] = {"@id": url + "#breadcrumb"}
     graph.append(page)
-    if p["slug"] == "index":
-        graph.append({"@type": "WebSite", "@id": SITE + "#website", "url": SITE, "name": NAME,
-                      "publisher": {"@id": SITE + "#business"}, "inLanguage": "en-CA"})
-    else:
-        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+    if p["slug"] != "index":
+        graph.append({"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
             {"@type": "ListItem", "position": 2, "name": plain(p["crumb"]), "item": url}]})
     if p.get("service"):
-        graph.append({"@type": "Service", "name": p["service"], "serviceType": "Dental hygiene",
-                      "provider": {"@id": SITE + "#business"}, "url": url,
-                      "areaServed": {"@type": "AdministrativeArea", "name": "Windsor and Essex County, Ontario"}})
+        graph.append({"@type": "Service", "@id": url + "#service", "name": p["service"],
+                      "description": p["service_desc"], "serviceType": "Dental hygiene",
+                      "audience": {"@type": "Audience", "audienceType": p["audience"]},
+                      "provider": {"@id": SITE + "#business"}, "url": url, "areaServed": AREA})
     if p.get("faq"):
         graph.append({"@type": "FAQPage", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in p["faq"]]})
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}} for q, a in p["faq"]]})
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
 
 
 def head(p):
     url = SITE + p["path"]
+    if p.get("noindex"):
+        robots, ld = '<meta name="robots" content="noindex">', ""
+    else:
+        robots = f'<link rel="canonical" href="{url}">'
+        ld = f'<script type="application/ld+json">\n{schema(p)}\n</script>\n'
     preload = ""
     if p.get("preload_hero"):
         n = p["preload_hero"]
@@ -327,9 +365,10 @@ def head(p):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{p["title"]}</title>
 <meta name="description" content="{p["description"]}">
-<link rel="canonical" href="{url}">
+{robots}
 <meta name="theme-color" content="#F3F2F0">
-<link rel="icon" href="img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="img/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <meta property="og:type" content="{'profile' if p.get('profile') else 'website'}">
 <meta property="og:site_name" content="{NAME}">
@@ -345,27 +384,33 @@ def head(p):
 <link rel="preload" href="fonts/atkinson-hyperlegible-next-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 {preload}<link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add('js')</script>
-<script type="application/ld+json">
-{schema(p)}
-</script>
-</head>"""
+{ld}</head>"""
 
 
 def crumbs(p):
     if p["slug"] == "index":
         return ""
-    return f'<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> / <span aria-current="page">{p["crumb"]}</span></nav>'
+    return f'<nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / <span aria-current="page">{p["crumb"]}</span></nav>'
 
 
 def build():
     for p in PAGES:
         body = open(os.path.join(ROOT, "_build", "pages", p["slug"] + ".html"), encoding="utf-8").read()
+        if p.get("faq"):
+            body = body.replace("{{faq}}", "\n".join(
+                f'        <details><summary>{q}<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">{a}</div></details>'
+                for q, a in p["faq"]))
         body = body.replace("{{crumbs}}", crumbs(p)).replace("{{book}}", BOOK_HREF).replace("{{tel}}", PHONE_TEL).replace("{{phone}}", PHONE)
         html = "\n".join([
             head(p), "<body>", '<a class="skip" href="#main">Skip to content</a>', "", SPRITE, "", header(p), "",
             '<main id="main">', body.rstrip("\n"), "", contact(p), "", "</main>", "", footer(), "",
             f'<script>window.SMILE_CARE_FORM_KEY = "{FORM_KEY}";</script>',
             '<script src="site.js" defer></script>', "</body>", "</html>", ""])
+        if p["slug"] == "404":
+            # Served at any missing URL, so every local path must be root-relative.
+            html = re.sub(r'(href|src)="(?!https?:|tel:|mailto:|#|/)(?:\./)?', r'\1="/', html)
+            html = re.sub(r'(srcset|imagesrcset)="([^"]*)"',
+                          lambda m: m.group(1) + '="' + re.sub(r'(^|, )img/', r'\1/img/', m.group(2)) + '"', html)
         with open(os.path.join(ROOT, p["file"]), "w", encoding="utf-8", newline="\n") as f:
             f.write(html)
         print("built", p["file"], len(html))

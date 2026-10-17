@@ -7,7 +7,8 @@
 <meta name="description" content="Lisa Suciu, RDH, brings dental cleanings and preventive care to your home, workplace or care home across Windsor &amp; Essex County. Direct billing, CDCP accepted.">
 <link rel="canonical" href="https://www.mobilesmilecare.ca/">
 <meta name="theme-color" content="#F3F2F0">
-<link rel="icon" href="img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="img/icon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="img/icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Mobile Smile Care: Dental Hygiene">
@@ -29,10 +30,16 @@
  "@context": "https://schema.org",
  "@graph": [
   {
-   "@type": "MedicalBusiness",
+   "@type": [
+    "MedicalBusiness",
+    "MedicalOrganization"
+   ],
    "@id": "https://www.mobilesmilecare.ca/#business",
    "name": "Mobile Smile Care: Dental Hygiene",
-   "alternateName": "Mobile Smile Care",
+   "alternateName": [
+    "Mobile Smile Care",
+    "Smile Care Mobile Dental Hygiene"
+   ],
    "description": "Mobile dental hygiene practice. A Registered Dental Hygienist provides cleanings and preventive dental hygiene care at home, at work, and in long-term care and retirement homes across Windsor and Essex County, Ontario.",
    "url": "https://www.mobilesmilecare.ca/",
    "telephone": "+1-905-941-7580",
@@ -42,10 +49,16 @@
     "https://www.mobilesmilecare.ca/img/og-image.jpg",
     "https://www.mobilesmilecare.ca/img/lisa-hero-1200.webp"
    ],
-   "medicalSpecialty": "Dentistry",
+   "medicalSpecialty": "https://schema.org/Dentistry",
    "knowsLanguage": [
     "en",
     "ro"
+   ],
+   "knowsAbout": [
+    "Dental hygiene",
+    "Preventive dental care",
+    "Mobile dental care",
+    "Oral health for seniors and people living with dementia"
    ],
    "address": {
     "@type": "PostalAddress",
@@ -56,55 +69,55 @@
    "areaServed": [
     {
      "@type": "City",
-     "name": "Windsor"
+     "name": "Windsor, Ontario"
     },
     {
      "@type": "City",
-     "name": "LaSalle"
+     "name": "LaSalle, Ontario"
     },
     {
      "@type": "City",
-     "name": "Tecumseh"
+     "name": "Tecumseh, Ontario"
     },
     {
      "@type": "City",
-     "name": "Amherstburg"
+     "name": "Amherstburg, Ontario"
     },
     {
      "@type": "City",
-     "name": "Lakeshore"
+     "name": "Lakeshore, Ontario"
     },
     {
      "@type": "City",
-     "name": "Belle River"
+     "name": "Belle River, Ontario"
     },
     {
      "@type": "City",
-     "name": "Essex"
+     "name": "Essex, Ontario"
     },
     {
      "@type": "City",
-     "name": "Kingsville"
+     "name": "Kingsville, Ontario"
     },
     {
      "@type": "City",
-     "name": "Leamington"
+     "name": "Leamington, Ontario"
     },
     {
      "@type": "City",
-     "name": "Harrow"
+     "name": "Harrow, Ontario"
     },
     {
      "@type": "City",
-     "name": "McGregor"
+     "name": "McGregor, Ontario"
     },
     {
      "@type": "City",
-     "name": "Comber"
+     "name": "Comber, Ontario"
     },
     {
      "@type": "AdministrativeArea",
-     "name": "Essex County, Ontario"
+     "name": "Windsor and Essex County, Ontario"
     }
    ],
    "openingHoursSpecification": [
@@ -127,37 +140,72 @@
      "closes": "18:00"
     }
    ],
-   "paymentAccepted": "Direct billing to insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP",
-   "availableService": [
-    {
-     "@type": "MedicalProcedure",
-     "name": "Dental cleaning (scaling and polishing)"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Oral hygiene assessment and home-care coaching"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Fluoride varnish"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Pit and fissure sealants"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Oral cancer screening"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Silver diamine fluoride"
-    },
-    {
-     "@type": "MedicalProcedure",
-     "name": "Interim stabilization therapy"
-    }
-   ],
+   "paymentAccepted": "Direct billing to private dental insurance, Canadian Dental Care Plan (CDCP), NIHB, ODSP, Healthy Smiles Ontario",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile dental hygiene services",
+    "itemListElement": [
+     {
+      "@type": "Service",
+      "name": "Oral hygiene review",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Scaling",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Stain removal and polishing",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Oral cancer screening",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Fluoride varnish",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Pit and fissure sealants",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Silver diamine fluoride",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Interim stabilization therapy",
+      "serviceType": "Dental hygiene"
+     },
+     {
+      "@type": "Service",
+      "name": "Referrals to dentists and specialists",
+      "serviceType": "Dental hygiene"
+     }
+    ]
+   },
+   "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "appointments",
+    "telephone": "+1-905-941-7580",
+    "email": "mobilesmilecaredental@gmail.com",
+    "areaServed": "CA",
+    "availableLanguage": [
+     "English",
+     "Romanian"
+    ]
+   },
+   "founder": {
+    "@id": "https://www.mobilesmilecare.ca/#lisa"
+   },
    "employee": {
     "@id": "https://www.mobilesmilecare.ca/#lisa"
    },
@@ -171,9 +219,11 @@
    "@id": "https://www.mobilesmilecare.ca/#lisa",
    "name": "Lisa Suciu",
    "jobTitle": "Registered Dental Hygienist",
+   "description": "Registered Dental Hygienist providing mobile dental hygiene in Windsor and Essex County, Ontario. Niagara College dental hygiene graduate, in practice since 2019; speaks English and Romanian.",
    "alumniOf": {
     "@type": "CollegeOrUniversity",
-    "name": "Niagara College"
+    "name": "Niagara College",
+    "url": "https://www.niagaracollege.ca/"
    },
    "knowsLanguage": [
     "en",
@@ -184,6 +234,17 @@
    },
    "image": "https://www.mobilesmilecare.ca/img/lisa-portrait-800.webp",
    "url": "https://www.mobilesmilecare.ca/meet-lisa.html"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.mobilesmilecare.ca/#website",
+   "url": "https://www.mobilesmilecare.ca/",
+   "name": "Mobile Smile Care: Dental Hygiene",
+   "alternateName": "Mobile Smile Care",
+   "publisher": {
+    "@id": "https://www.mobilesmilecare.ca/#business"
+   },
+   "inLanguage": "en-CA"
   },
   {
    "@type": "WebPage",
@@ -197,21 +258,28 @@
    },
    "about": {
     "@id": "https://www.mobilesmilecare.ca/#business"
-   }
-  },
-  {
-   "@type": "WebSite",
-   "@id": "https://www.mobilesmilecare.ca/#website",
-   "url": "https://www.mobilesmilecare.ca/",
-   "name": "Mobile Smile Care: Dental Hygiene",
-   "publisher": {
-    "@id": "https://www.mobilesmilecare.ca/#business"
    },
-   "inLanguage": "en-CA"
+   "dateModified": "2026-10-17"
   },
   {
    "@type": "FAQPage",
    "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is mobile dental hygiene?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Professional dental hygiene care brought to you. Instead of travelling to a clinic, I come to your home, workplace or care residence with all the equipment needed for a complete, comfortable visit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Are you a dentist?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. I’m a Registered Dental Hygienist. I provide cleanings and preventive care, and refer you to a trusted dentist for treatment such as fillings or extractions."
+     }
+    },
     {
      "@type": "Question",
      "name": "What do I need for a home visit?",
@@ -222,10 +290,10 @@
     },
     {
      "@type": "Question",
-     "name": "Is a mobile cleaning as thorough as one at a clinic?",
+     "name": "How does a mobile visit compare to a clinic visit?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. I use clinic-grade portable equipment and sterilized instruments, and every visit includes the same assessment, scaling and polishing you’d receive in a clinic."
+      "text": "You get a complete hygiene appointment (assessment, scaling and polishing) with clinic-grade portable equipment, sterilized instruments, and the same professional and infection-control standards that apply in any clinic."
      }
     },
     {
@@ -233,7 +301,7 @@
      "name": "Do you bill my insurance directly?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB and ODSP."
+      "text": "Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB, ODSP and Healthy Smiles Ontario. See insurance details."
      }
     },
     {
@@ -249,7 +317,23 @@
      "name": "Do you visit long-term care and retirement homes?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Yes. I provide on-site care in long-term care homes, retirement residences, assisted living and memory care, with no resident transport."
+      "text": "Yes. I provide on-site care in long-term care homes, retirement residences, assisted living and memory care, with no resident transport. Details for care homes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What areas do you serve?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Windsor and Essex County, including LaSalle, Tecumseh, Amherstburg, Lakeshore, Belle River, Essex, Kingsville, Leamington, Harrow, McGregor and Comber. Not sure if I reach you? Just ask."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can my visit be in Romanian?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. I speak English and Romanian, so your visit can be in whichever you prefer."
      }
     },
     {
@@ -284,7 +368,7 @@
 
 <header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="index.html">
+    <a class="brand" href="./">
       <img src="img/mark-96.png" width="30" height="33" alt="">
       <span class="brand-name"><b>Mobile Smile Care</b><span>Dental Hygiene</span></span>
     </a>
@@ -292,16 +376,16 @@
       <details class="navmenu">
         <summary>Who I help <svg aria-hidden="true"><use href="#i-chev"/></svg></summary>
         <ul>
-          <li><a href="children.html">Children<small>Gentle first visits at home</small></a></li>
+          <li><a href="children.html">Children<small>First visits at home</small></a></li>
           <li><a href="busy-professionals.html">Busy professionals<small>At home or at work</small></a></li>
           <li><a href="seniors-mobility.html">Seniors &amp; limited mobility<small>Unhurried care at home</small></a></li>
           <li><a href="care-homes.html">Care homes<small>On-site for residents</small></a></li>
         </ul>
       </details>
-      <a href="index.html#services">Services</a>
+      <a href="./#services">Services</a>
       <a href="insurance.html">Insurance</a>
       <a href="meet-lisa.html">Meet Lisa</a>
-      <a href="index.html#faq">FAQ</a>
+      <a href="./#faq">FAQ</a>
     </nav>
     <div class="header-actions">
       <a class="tel tel-text" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>(905) 941-7580</a>
@@ -316,11 +400,11 @@
           <a href="seniors-mobility.html">Seniors &amp; limited mobility <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a href="care-homes.html">Care homes <svg width="22" height="22" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <span class="caps">More</span>
-          <a href="index.html#services">Services</a>
+          <a href="./#services">Services</a>
           <a href="insurance.html">Insurance &amp; billing</a>
           <a href="meet-lisa.html">Meet Lisa</a>
           <a href="patient-forms.html">Patient forms</a>
-          <a href="index.html#faq">FAQ</a>
+          <a href="./#faq">FAQ</a>
           <a class="btn btn--dark" href="#contact" data-book>Book a visit</a>
         </nav>
       </details>
@@ -333,10 +417,10 @@
     <div class="wrap hero-grid">
       <div>
         <h1 id="hero-title">Mobile dental hygiene, brought to your door.</h1>
-        <p class="lede">I’m Lisa Suciu, a Registered Dental Hygienist. I bring professional cleanings and preventive care to homes, workplaces and care residences across Windsor &amp; Essex County.</p>
+        <p class="lede">I’m Lisa Suciu, RDH, a mobile dental hygienist. Through Mobile Smile Care, I bring professional teeth cleanings and preventive care to homes, workplaces and care residences across Windsor &amp; Essex County, Ontario.</p>
         <div class="hero-actions">
           <a class="btn btn--dark" href="#contact" data-book><svg aria-hidden="true"><use href="#i-cal"/></svg>Book a visit</a>
-          <a class="btn btn--line" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call (905) 941-7580</a>
+          <a class="btn btn--line" href="tel:+19059417580"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call<span class="num">&nbsp;(905) 941-7580</span></a>
         </div>
         <ul class="creds">
           <li>Registered Dental Hygienist</li>
@@ -347,8 +431,10 @@
       <figure class="portrait">
         <svg class="halo" viewBox="0 0 600 300" aria-hidden="true"><path pathLength="1" d="M30 290C60 120 180 22 300 22s240 98 270 268"/></svg>
         <picture>
-          <source type="image/avif" srcset="img/lisa-hero-600.avif 600w, img/lisa-hero-900.avif 900w, img/lisa-hero-1200.avif 1200w" sizes="(max-width: 860px) 92vw, 500px">
-          <img src="img/lisa-hero-900.webp" srcset="img/lisa-hero-600.webp 600w, img/lisa-hero-900.webp 900w, img/lisa-hero-1200.webp 1200w" sizes="(max-width: 860px) 92vw, 500px" width="900" height="1200" alt="Lisa Suciu, Registered Dental Hygienist, smiling beside her portable dental hygiene unit" fetchpriority="high">
+          <source media="(max-width: 860px)" type="image/avif" srcset="img/lisa-hero-m-600.avif 600w, img/lisa-hero-m-900.avif 900w" sizes="92vw">
+          <source media="(max-width: 860px)" type="image/webp" srcset="img/lisa-hero-m-600.webp 600w, img/lisa-hero-m-900.webp 900w" sizes="92vw">
+          <source type="image/avif" srcset="img/lisa-hero-600.avif 600w, img/lisa-hero-900.avif 900w, img/lisa-hero-1200.avif 1200w" sizes="500px">
+          <img src="img/lisa-hero-900.webp" srcset="img/lisa-hero-600.webp 600w, img/lisa-hero-900.webp 900w, img/lisa-hero-1200.webp 1200w" sizes="500px" width="900" height="1200" alt="Lisa Suciu, Registered Dental Hygienist, smiling beside her portable dental hygiene unit" fetchpriority="high">
         </picture>
         <figcaption><span><b>Lisa Suciu, RDH</b></span><span>with her portable clinic</span></figcaption>
       </figure>
@@ -362,7 +448,7 @@
         <p>Every visit is shaped around the person in the chair. Choose yours to see what to expect.</p>
       </div>
       <ul class="router">
-        <li><a href="children.html"><h3>My child</h3><p>Gentle visits at home with fluoride, sealants and no waiting room.</p><span class="go"><span>Children</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+        <li><a href="children.html"><h3>My child</h3><p>Relaxed visits at home with fluoride, sealants and no waiting room.</p><span class="go"><span>Children</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
         <li><a href="busy-professionals.html"><h3>Me, at home or at work</h3><p>A full cleaning in your living room or office, booked around your day.</p><span class="go"><span>Professionals</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
         <li><a href="seniors-mobility.html"><h3>A parent or senior</h3><p>Unhurried care for seniors, people living with dementia and anyone with limited mobility.</p><span class="go"><span>Seniors</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
         <li><a href="care-homes.html"><h3>Care home residents</h3><p>On-site hygiene for long-term care and retirement homes, with no resident transport.</p><span class="go"><span>Care homes</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
@@ -402,17 +488,17 @@
   <section class="section band--linen" id="services" aria-labelledby="services-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="services-title">Services</h2>
+        <h2 id="services-title">Dental hygiene services in Windsor &amp; Essex</h2>
         <p>Preventive and therapeutic dental hygiene, delivered with the same standard of care as a clinic.</p>
       </div>
       <dl class="services">
         <div><dt>Oral hygiene review</dt><dd>A look at your gums and teeth, with practical advice on brushing, flossing and products.</dd></div>
-        <div><dt>Scaling</dt><dd>Gentle, thorough removal of plaque and tartar to protect your gums.</dd></div>
+        <div><dt>Scaling</dt><dd>Thorough removal of plaque and tartar to protect your gums.</dd></div>
         <div><dt>Stain removal &amp; polishing</dt><dd>Lifts surface stains for a cleaner, brighter finish.</dd></div>
         <div><dt>Oral cancer screening</dt><dd>A careful check of the soft tissues, because early detection matters.</dd></div>
         <div><dt>Fluoride varnish</dt><dd>Strengthens enamel and eases sensitivity.</dd></div>
         <div><dt>Pit &amp; fissure sealants</dt><dd>A protective coating for the grooves of back teeth.</dd></div>
-        <div><dt>Silver diamine fluoride</dt><dd>A non-invasive treatment that arrests decay, ideal when drilling isn’t an option.</dd></div>
+        <div><dt>Silver diamine fluoride</dt><dd>A non-invasive treatment that arrests decay, useful when drilling isn’t an option.</dd></div>
         <div><dt>Interim stabilization therapy</dt><dd>Temporary care to stabilize active decay until further treatment.</dd></div>
         <div><dt>Referrals</dt><dd>When you need more, I connect you with trusted dentists and specialists.</dd></div>
       </dl>
@@ -423,17 +509,16 @@
     <div class="wrap lisa-grid">
       <div class="lisa-photo">
         <picture>
-          <source type="image/avif" srcset="img/lisa-portrait-480.avif 480w, img/lisa-portrait-800.avif 800w" sizes="(max-width: 860px) 90vw, 420px">
-          <img src="img/lisa-portrait-800.webp" srcset="img/lisa-portrait-480.webp 480w, img/lisa-portrait-800.webp 800w" sizes="(max-width: 860px) 90vw, 420px" width="800" height="1000" alt="Portrait of Lisa Suciu in black scrubs with her dental loupes" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="img/lisa-full-560.avif 560w, img/lisa-full-880.avif 880w" sizes="(max-width: 860px) 90vw, 420px">
+          <img src="img/lisa-full-560.webp" srcset="img/lisa-full-560.webp 560w, img/lisa-full-880.webp 880w" sizes="(max-width: 860px) 90vw, 420px" width="560" height="700" alt="Lisa Suciu, Registered Dental Hygienist, standing beside her portable dental unit" loading="lazy" decoding="async">
         </picture>
       </div>
       <div class="lisa-copy">
-        <p class="hello" lang="ro">Bună! <span lang="en">Hello, and welcome.</span></p>
-        <h2 id="lisa-title">Meet Lisa</h2>
+        <h2 id="lisa-title"><span lang="ro" class="ro">Bună!</span> I’m Lisa.</h2>
         <p class="measure" style="margin-top:22px">I went mobile to reach the people who need care most: those who can’t easily get to a clinic, and those who would simply rather be at home. One hygienist, from your first visit to your last, at a pace that suits you.</p>
         <dl class="facts">
           <div><dt class="caps">Trained</dt><dd>Niagara College, 2019</dd></div>
-          <div><dt class="caps">Experience</dt><dd>7 years in practice</dd></div>
+          <div><dt class="caps">Experience</dt><dd>In practice since 2019</dd></div>
           <div><dt class="caps">Languages</dt><dd>English &amp; Romanian</dd></div>
         </dl>
         <p style="margin-top:32px"><a class="arrow-link" href="meet-lisa.html">More about Lisa <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
@@ -452,6 +537,7 @@
         <li><b>Canadian Dental Care Plan</b><abbr title="Canadian Dental Care Plan">CDCP</abbr><span>Accepted for eligible residents</span></li>
         <li><b>Non-Insured Health Benefits</b><abbr title="Non-Insured Health Benefits">NIHB</abbr><span>Direct billing available</span></li>
         <li><b>Ontario Disability Support Program</b><abbr title="Ontario Disability Support Program">ODSP</abbr><span>Direct billing available</span></li>
+        <li><b>Healthy Smiles Ontario</b><abbr title="Healthy Smiles Ontario">HSO</abbr><span>For eligible children and youth 17 and under</span></li>
         <li><b>Private insurance</b><abbr title="Most major providers">Most plans</abbr><span>Direct billing with most major providers</span></li>
       </ul>
     </div>
@@ -461,7 +547,7 @@
     <div class="wrap">
       <div class="section-head" style="margin-bottom:0">
         <h2 id="area-title">Serving Windsor &amp; Essex County</h2>
-        <p>I travel to homes, workplaces and care residences across the region. Not sure if I reach you? Just ask.</p>
+        <p>I travel to homes, workplaces and care residences across Windsor, the LaSalle–Amherstburg shoreline, Tecumseh and Lakeshore, and the county towns from Essex to Leamington. Not sure if I reach you? Just ask.</p>
       </div>
       <ul class="towns">
         <li>Windsor</li><li>LaSalle</li><li>Tecumseh</li><li>Amherstburg</li><li>Lakeshore</li><li>Belle River</li><li>Essex</li><li>Kingsville</li><li>Leamington</li><li>Harrow</li><li>McGregor</li><li>Comber</li>
@@ -473,11 +559,15 @@
     <div class="wrap">
       <h2 id="faq-title" style="text-align:center;margin-bottom:48px">Questions, answered</h2>
       <div class="faq">
+        <details><summary>What is mobile dental hygiene?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Professional dental hygiene care brought to you. Instead of travelling to a clinic, I come to your home, workplace or care residence with all the equipment needed for a complete, comfortable visit.</div></details>
+        <details><summary>Are you a dentist?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">No. I’m a Registered Dental Hygienist. I provide cleanings and preventive care, and refer you to a trusted dentist for treatment such as fillings or extractions.</div></details>
         <details><summary>What do I need for a home visit?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Very little: a comfortable place to sit or recline, an electrical outlet and a nearby sink. I bring all the equipment and follow strict infection-control protocols.</div></details>
-        <details><summary>Is a mobile cleaning as thorough as one at a clinic?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Yes. I use clinic-grade portable equipment and sterilized instruments, and every visit includes the same assessment, scaling and polishing you’d receive in a clinic.</div></details>
-        <details><summary>Do you bill my insurance directly?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB and ODSP. <a href="insurance.html">See insurance details</a>.</div></details>
+        <details><summary>How does a mobile visit compare to a clinic visit?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">You get a complete hygiene appointment (assessment, scaling and polishing) with clinic-grade portable equipment, sterilized instruments, and the same professional and infection-control standards that apply in any clinic.</div></details>
+        <details><summary>Do you bill my insurance directly?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Yes. Direct billing is available for most private plans, and for the Canadian Dental Care Plan (CDCP), NIHB, ODSP and Healthy Smiles Ontario. <a href="insurance.html">See insurance details</a>.</div></details>
         <details><summary>Am I eligible for the CDCP?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">The Canadian Dental Care Plan covers eligible Canadian residents who meet income requirements and don’t have access to private dental insurance. I’m happy to help you check your coverage.</div></details>
         <details><summary>Do you visit long-term care and retirement homes?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Yes. I provide on-site care in long-term care homes, retirement residences, assisted living and memory care, with no resident transport. <a href="care-homes.html">Details for care homes</a>.</div></details>
+        <details><summary>What areas do you serve?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Windsor and Essex County, including LaSalle, Tecumseh, Amherstburg, Lakeshore, Belle River, Essex, Kingsville, Leamington, Harrow, McGregor and Comber. Not sure if I reach you? Just ask.</div></details>
+        <details><summary>Can my visit be in Romanian?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">Yes. I speak English and Romanian, so your visit can be in whichever you prefer.</div></details>
         <details><summary>Is there a travel fee?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary><div class="answer">A small travel fee may apply depending on where you are. We’ll confirm it together when you book.</div></details>
       </div>
     </div>
@@ -493,7 +583,7 @@
         <p class="lede" style="margin-top:18px">Call or text, or send a question and I’ll reply personally.</p>
         <ul class="contact-lines">
           <li><span class="caps">Phone</span><a href="tel:+19059417580">(905) 941-7580</a></li>
-          <li><span class="caps">Email</span><a href="mailto:mobilesmilecaredental@gmail.com">mobilesmilecaredental@gmail.com</a></li>
+          <li><span class="caps">Email</span><a href="mailto:mobilesmilecaredental@gmail.com">mobilesmilecaredental@<wbr>gmail.com</a></li>
           <li><span class="caps">Hours</span>
             <dl class="hours"><dt>Friday</dt><dd>6 – 9 pm</dd><dt>Saturday</dt><dd>10 am – 8 pm</dd><dt>Sunday</dt><dd>10 am – 6 pm</dd></dl>
           </li>
@@ -526,8 +616,8 @@
     <div class="footer-grid">
       <div>
         <img class="brand-mark" src="img/mark-96.png" width="34" height="37" alt="">
-        <h2>Mobile Smile Care: Dental Hygiene</h2>
-        <p>Professional dental hygiene at home, at work and in care residences across Windsor &amp; Essex County.</p>
+        <p class="foot-name">Mobile Smile Care: Dental Hygiene</p>
+        <p>Mobile Smile Care: Dental Hygiene is the mobile practice of Lisa Suciu, Registered Dental Hygienist, serving Windsor and Essex County, Ontario, in English and Romanian.</p>
         <div class="socials">
           <a href="https://www.instagram.com/mobile.smilecare/" aria-label="Instagram" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
           <a href="https://www.facebook.com/mobilesmilecaredentalhygiene/" aria-label="Facebook" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
@@ -548,7 +638,7 @@
           <li><a href="meet-lisa.html">Meet Lisa</a></li>
           <li><a href="insurance.html">Insurance &amp; billing</a></li>
           <li><a href="patient-forms.html">Patient forms</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="./#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
