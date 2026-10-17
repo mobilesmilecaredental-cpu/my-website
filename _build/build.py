@@ -150,7 +150,7 @@ def header(p):
         f'          <a href="{f}"{aria(f)}>{label} {arrow(22)}</a>' for f, label, _ in AUDIENCE)
     return f"""<header class="site-header" id="top">
   <div class="wrap header-row">
-    <a class="brand" href="index.html" aria-label="{NAME}, home">
+    <a class="brand" href="index.html">
       <img src="img/mark-96.png" width="30" height="33" alt="">
       <span class="brand-name"><b>Mobile Smile Care</b><span>Dental Hygiene</span></span>
     </a>
@@ -203,7 +203,7 @@ def contact(p):
     return f"""  <section class="section" id="contact" aria-labelledby="contact-title">
     <div class="wrap contact-grid">
       <div>
-        <img class="contact-logo" src="img/logo-720.webp" width="720" height="720" alt="{NAME} logo" loading="lazy" decoding="async">
+        <img class="contact-logo" src="img/logo-720.webp" srcset="img/logo-360.webp 360w, img/logo-720.webp 720w" sizes="300px" width="720" height="720" alt="{NAME} logo" loading="lazy" decoding="async">
         <h2 id="contact-title">{heading}</h2>
         <p class="lede" style="margin-top:18px">{lede}</p>
         <ul class="contact-lines">

@@ -1,73 +1,42 @@
-# Smile Care — website files
+# Mobile Smile Care: Dental Hygiene — website
 
-Everything in this folder is the complete website: plain HTML, no build
-step, no installs, no server code. Upload the folder contents as-is.
+Plain static HTML, served by GitHub Pages from the `main` branch at
+www.mobilesmilecare.ca (Cloudflare in front). No server code.
 
 ## What's here
 
-    index.html               Home page  (must keep this exact name)
-    children.html            Children
-    busy-professionals.html  Busy professionals
-    seniors-mobility.html    Seniors & mobility
-    care-homes.html          Long-term care & retirement homes
-    insurance.html           Insurance & direct billing
-    patient-forms.html       Patient intake forms
-    site.js                  Menus, FAQ, forms, animations — keep it
-    assets/                  Logo, QR code, images
-    robots.txt               Tells search engines to index the site
-    sitemap.xml              Lists all seven pages for search engines
+    index.html                 Home
+    children.html              Children
+    busy-professionals.html    At home or at work
+    seniors-mobility.html      Seniors & limited mobility
+    care-homes.html            Long-term care & retirement homes
+    insurance.html             Insurance & direct billing
+    meet-lisa.html             Meet Lisa
+    patient-forms.html         How intake forms work (forms come via Akitu)
+    styles.css, site.js        Shared look and small enhancements
+    fonts/, img/               Self-hosted fonts and web-optimized images
+    sitemap.xml, robots.txt    For search engines
+    CNAME                      Holds the domain. Do not delete.
 
-Every page is finished HTML on its own — the text and layout are in the
-file, so pages appear instantly and search engines read them directly.
-site.js only adds the interactive extras (mobile menu, FAQ accordion,
-form sending, scroll animations). If it were removed, the pages would
-still read correctly; they just wouldn't be interactive.
+    _build/                    Page sources + generator (not published)
+    _photos/                   Original photos (not published)
 
-## Publishing on GitHub Pages
+## Editing pages
 
-1. Upload the CONTENTS of this folder to the root of your repo —
-   index.html must sit at the top level, not inside a folder.
-2. Settings → Pages → Deploy from a branch → main → / (root) → Save.
-3. Do NOT delete the CNAME file GitHub added; it holds your domain.
+Page bodies live in _build/pages/<page>.html. Shared header, footer, contact
+block, page titles/descriptions and Google structured data live in
+_build/build.py. After editing, run:
 
-## Turn on the inquiry forms (2 minutes)
+    python _build/build.py
 
-Out of the box the forms open the visitor's own email app. To have
-submissions land in your inbox automatically:
+That rewrites the .html files at the top level. Commit those.
 
-1. Go to https://web3forms.com
-2. Enter mobilesmilecaredental@gmail.com and submit
-3. They email you an access key (looks like a1b2c3d4-e5f6-...)
-4. Open each .html file in a text editor and find, near the top:
+## Booking link
 
-       window.SMILE_CARE_FORM_KEY = "";
+Book buttons currently point to the contact section. When the Akitu One
+booking link is ready, set BOOK_HREF in _build/build.py and rebuild.
 
-5. Paste your key between the quotes and save:
+## Contact form
 
-       window.SMILE_CARE_FORM_KEY = "a1b2c3d4-e5f6-...";
-
-Do this in all seven files. Free tier covers 250 submissions/month.
-
-## Domain & search
-
-The live domain is https://www.mobilesmilecare.ca/ — it appears in the
-canonical tags, sitemap.xml, and robots.txt. If it ever changes, ask me
-to swap it and I'll regenerate the files.
-
-Submit sitemap.xml in Google Search Console
-(search.google.com/search-console) so the site gets indexed faster.
-
-Most important step for local search: a free Google Business Profile
-for Smile Care with the service area set to Windsor / Essex County.
-Without it the practice won't appear in map results.
-
-## Making changes later
-
-Text and colours are plain HTML inside each file, editable in any text
-editor. To swap an image, replace the file in assets/ keeping the same
-filename, then re-upload.
-
-## Notes
-
-- Test on a real phone before sharing the link widely.
-- Keep a copy of this folder somewhere safe as your master version.
+Sends through Web3Forms to mobilesmilecaredental@gmail.com
+(key in _build/build.py). For general questions only; no health details.
