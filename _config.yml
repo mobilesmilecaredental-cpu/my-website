@@ -1,0 +1,5 @@
+# GitHub Pages (Jekyll) settings: keep working files off the public site.
+exclude:
+  - PRODUCT.md
+  - DESIGN.md
+  - README.txt
