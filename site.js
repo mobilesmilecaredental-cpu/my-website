@@ -1,4 +1,4 @@
-/* Smile Care — interactive behaviour for the static site.
+/* Mobile Smile Care — interactive behaviour for the static site.
    The pages are complete HTML on their own; everything here is enhancement. */
 (function () {
   'use strict';
@@ -129,7 +129,7 @@
       var btn = form.querySelector('button[type="submit"]');
 
       if (key) {
-        var payload = { access_key: key, subject: subject, message: body, from_name: 'Smile Care website' };
+        var payload = { access_key: key, subject: subject, message: body, from_name: 'Mobile Smile Care website' };
         fields.forEach(function (f) { payload[f.key] = f.value; });
         if (emailField) payload._replyto = emailField.value;
         if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = 'Sending\u2026'; }
@@ -267,7 +267,7 @@
     if (hero) Array.prototype.forEach.call(hero.children, function (ch) {
       if (getComputedStyle(ch).position === 'absolute') add(ch, 26);
     });
-    add($('img[src*="logo-wordmark"]'), 10);
+    add($('img[src*="logo-mobile-smile-care"]'), 10);
     add($('img[src*="qr-book"]'), 8);
     $$('section div').forEach(function (d) {
       var gc = getComputedStyle(d).gridTemplateColumns;

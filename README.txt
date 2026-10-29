@@ -1,4 +1,4 @@
-# Smile Care — website files
+# Mobile Smile Care: Dental Hygiene — website files
 
 Everything in this folder is the complete website: plain HTML, no build
 step, no installs, no server code. Upload the folder contents as-is.
@@ -6,16 +6,17 @@ step, no installs, no server code. Upload the folder contents as-is.
 ## What's here
 
     index.html               Home page  (must keep this exact name)
-    children.html            Children
-    busy-professionals.html  Busy professionals
-    seniors-mobility.html    Seniors & mobility
+    seniors-mobility.html    Seniors & adults with disabilities
     care-homes.html          Long-term care & retirement homes
     insurance.html           Insurance & direct billing
-    patient-forms.html       Patient intake forms
+    children.html            Retired: redirects to the home page
+    busy-professionals.html  Retired: redirects to the home page
+    patient-forms.html       Retired: redirects to the home page
+                             (intake forms are sent to patients directly)
     site.js                  Menus, FAQ, forms, animations — keep it
     assets/                  Logo, QR code, images
     robots.txt               Tells search engines to index the site
-    sitemap.xml              Lists all seven pages for search engines
+    sitemap.xml              Lists the four live pages for search engines
 
 Every page is finished HTML on its own — the text and layout are in the
 file, so pages appear instantly and search engines read them directly.
@@ -46,7 +47,7 @@ submissions land in your inbox automatically:
 
        window.SMILE_CARE_FORM_KEY = "a1b2c3d4-e5f6-...";
 
-Do this in all seven files. Free tier covers 250 submissions/month.
+Do this in the four live pages (the retired ones have no forms). Free tier covers 250 submissions/month.
 
 ## Domain & search
 
@@ -58,7 +59,7 @@ Submit sitemap.xml in Google Search Console
 (search.google.com/search-console) so the site gets indexed faster.
 
 Most important step for local search: a free Google Business Profile
-for Smile Care with the service area set to Windsor / Essex County.
+for Mobile Smile Care: Dental Hygiene with the service area set to Windsor / Essex County.
 Without it the practice won't appear in map results.
 
 ## Making changes later
